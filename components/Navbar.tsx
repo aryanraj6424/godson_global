@@ -38,11 +38,11 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center group">
-            <div className="h-12 w-12 md:h-16 md:w-16 flex items-center justify-center p-1 bg-white rounded-full border-2 border-[#26BAA4] shadow-lg transform transition-transform group-hover:scale-105">
+            <div className="h-12 w-12 md:h-16 md:w-16 flex items-center justify-center bg-white rounded-full border-2 border-[#26BAA4] shadow-lg transform transition-transform group-hover:scale-105 overflow-hidden">
                <img 
-                 src="https://i.ibb.co/RTP9M9L/godson-logo.png" 
+                 src="/uploads/logoo.png" 
                  alt="Godson Global Logo" 
-                 className="h-full w-full object-contain"
+                 className="h-full w-full object-contain scale-125 translate-y-0"
                />
             </div>
           </Link>
@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 top-[65px] bg-[#050C1A] z-40 p-6 flex flex-col space-y-6 animate-in slide-in-from-right duration-300 overflow-y-auto pb-20">
+        <div className="md:hidden fixed left-0 right-0 top-[72px] h-[calc(100vh-72px)] bg-[#050C1A] z-40 p-6 flex flex-col space-y-6 overflow-y-auto">
           {NAV_ITEMS.map((item) => (
             <div key={item.label} className="space-y-4">
               <div className="flex items-center justify-between">

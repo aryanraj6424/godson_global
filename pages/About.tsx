@@ -48,7 +48,7 @@ const About: React.FC = () => {
             <div className="relative flex justify-center">
                <div className="absolute inset-0 bg-[#26BAA4]/5 rounded-full blur-3xl scale-75"></div>
                <img 
-                  src="https://i.ibb.co/RTP9M9L/godson-logo.png" 
+                  src="/uploads/logoo.png" 
                   alt="Godson Logo" 
                   className="relative z-10 w-full max-w-md h-auto animate-float"
                />
@@ -100,7 +100,7 @@ const About: React.FC = () => {
             <div className="group text-center">
               <div className="relative mb-8 overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" 
+                  src="/uploads/director.png" 
                   alt="Vijay Pratap Srivastav" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -118,7 +118,7 @@ const About: React.FC = () => {
             <div className="group text-center">
               <div className="relative mb-8 overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl ring-4 ring-[#26BAA4]/20 ring-offset-4 ring-offset-[#050C1A]">
                 <img 
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop" 
+                  src="/uploads/ceo.png" 
                   alt="Abhay Raj Srivastav" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -136,7 +136,7 @@ const About: React.FC = () => {
             <div className="group text-center">
               <div className="relative mb-8 overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+                  src="/uploads/co-founder.png" 
                   alt="Richa Srivastav" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -208,9 +208,9 @@ const About: React.FC = () => {
                 <div className="space-y-4">
                   <h4 className="text-3xl font-serif text-white">Office</h4>
                   <p className="text-white/70 leading-relaxed text-lg">
-                    Grandslam Ithum Tower<br />
-                    Tower A, Sector 62, Noida.<br />
-                    201309 Uttar Pradesh
+                    B-1131 Tower B, ITHUM TOWER<br />
+                    11th floor, Plot no. A 40,Sector 62,Noida,Uttar Pradesh.<br />
+                    201309 
                   </p>
                 </div>
               </div>

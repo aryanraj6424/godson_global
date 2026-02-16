@@ -44,11 +44,10 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
     category: 'Hygiene Product',
     description: 'Specially designed to provide superior comfort, dryness, and protection for babies at every stage.',
     fullDescription: 'Our high-quality baby diapers are manufactured with soft, skin-friendly materials and advanced absorbent technology. They ensure excellent leakage control, high absorbency, and gentle care for delicate baby skin. They are suitable for both active babies and overnight use, providing convenience for parents and caregivers.',
-    image: 'https://images.unsplash.com/photo-1544126592-807daa2b565b?q=80&w=2000&auto=format&fit=crop',
+    image: '/uploads/babypad1.png',
     sliderImages: [
       '/uploads/babybanner1.png',
-      'https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1555252333-978630477c44?q=80&w=2000&auto=format&fit=crop'
+      
     ],
     features: [],
     featuresList: [

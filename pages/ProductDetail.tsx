@@ -256,12 +256,12 @@ const ProductDetail: React.FC = () => {
             </div>
             <div className="lg:w-1/2">
               <div className="grid grid-cols-2 gap-6">
-                <div className="rounded-2xl overflow-hidden h-[400px]">
-                  <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Logistics 1" className="w-full h-full object-cover" />
+                <div className="rounded-2xl overflow-hidden h-[500px] w-[500px]">
+                  <img src="/uploads/logestic.png" alt="Logistics 1" className="w-full h-full object-cover" />
                 </div>
-                <div className="rounded-2xl overflow-hidden h-[400px] mt-12">
+                {/* <div className="rounded-2xl overflow-hidden h-[400px] mt-12">
                   <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?q=80&w=800&auto=format&fit=crop" alt="Logistics 2" className="w-full h-full object-cover" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

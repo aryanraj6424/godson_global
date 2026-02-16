@@ -57,8 +57,8 @@ const Contact: React.FC = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-4 uppercase tracking-wider">Location</h3>
                   <p className="text-white/90 leading-relaxed text-lg">
-                    Grandslam Ithum Tower<br />
-                    Tower A, Sector 62, Noida.<br />
+                    B-1131 Tower B, ITHUM TOWER<br />
+                    11th floor, Plot no. A 40,Sector 62,Noida,Uttar Pradesh.<br />
                     201309<br />
                     Uttar Pradesh
                   </p>
@@ -149,10 +149,10 @@ const Contact: React.FC = () => {
                 <div>
                   <h3 className="text-5xl font-serif text-white mb-10 tracking-tight">Reach Us</h3>
                   <div className="flex space-x-6">
-                    <a href="#" className="w-14 h-14 bg-[#3b5998] hover:scale-110 transition-transform rounded flex items-center justify-center text-white"><Facebook className="w-6 h-6" /></a>
-                    <a href="#" className="w-14 h-14 bg-[#E1306C] hover:scale-110 transition-transform rounded flex items-center justify-center text-white"><Instagram className="w-6 h-6" /></a>
-                    <a href="#" className="w-14 h-14 bg-[#0077B5] hover:scale-110 transition-transform rounded flex items-center justify-center text-white"><Linkedin className="w-6 h-6" /></a>
-                    <a href="#" className="w-14 h-14 bg-[#FF0000] hover:scale-110 transition-transform rounded flex items-center justify-center text-white"><Youtube className="w-6 h-6" /></a>
+                    <a href="https://www.facebook.com/people/Godson-Global/61571279177409/" className="w-14 h-14 bg-[#3b5998] hover:scale-110 transition-transform rounded flex items-center justify-center text-white"><Facebook className="w-6 h-6" /></a>
+                    <a href="https://www.instagram.com/godson_global_/" className="w-14 h-14 bg-[#E1306C] hover:scale-110 transition-transform rounded flex items-center justify-center text-white"><Instagram className="w-6 h-6" /></a>
+                    <a href="https://www.linkedin.com/company/godson-global-pvt-ltd/" className="w-14 h-14 bg-[#0077B5] hover:scale-110 transition-transform rounded flex items-center justify-center text-white"><Linkedin className="w-6 h-6" /></a>
+                    <a href="https://www.youtube.com/@GodsonGlobal" className="w-14 h-14 bg-[#FF0000] hover:scale-110 transition-transform rounded flex items-center justify-center text-white"><Youtube className="w-6 h-6" /></a>
                   </div>
                 </div>
               </div>

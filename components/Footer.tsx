@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
             <Link to="/" className="mb-4">
               <div className="h-16 w-16 bg-white rounded-full p-1 border-2 border-[#26BAA4] shadow-lg">
                 <img 
-                  src="https://i.ibb.co/RTP9M9L/godson-logo.png" 
+                  src="/uploads/logoo.png" 
                   alt="Godson Global Logo" 
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-contain scale-125 translate-y-0"
                 />
               </div>
             </Link>

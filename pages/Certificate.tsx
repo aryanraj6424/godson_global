@@ -6,29 +6,21 @@ import { ShieldCheck, Download, ExternalLink, ChevronRight } from 'lucide-react'
 const Certificate: React.FC = () => {
   const certificateDocs = [
     {
-      title: "Importer-Exporter Code (IEC)",
-      issuer: "Ministry of Commerce and Industry, Government of India",
-      image: "https://i.ibb.co/3ykS8Vv/iec-cert.png", // Representative placeholder
-      description: "Mandatory registration for companies carrying out the import and export of goods and services from India."
+     
+      image: "/certificate/img1.png", // Representative placeholder
+      
     },
     {
-      title: "GST Registration Certificate",
-      issuer: "Department of Revenue, Government of India",
-      image: "https://i.ibb.co/L9Y0j0y/gst-cert.png", // Representative placeholder
-      description: "Formal registration under the Goods and Services Tax Act, ensuring tax compliance for global operations."
+      
+      image: "/certificate/img2.jpeg", // Representative placeholder
+      
     },
     {
-      title: "APEDA Registration",
-      issuer: "Agricultural & Processed Food Products Export Development Authority",
-      image: "https://i.ibb.co/BgnD1jH/apeda-logo.png", // Representative placeholder
-      description: "Authorization for export of agricultural and processed food products, certifying adherence to quality standards."
+     
+      image: "/certificate/img3.jpeg", // Representative placeholder
+      
     },
-    {
-      title: "Udyam Registration",
-      issuer: "Ministry of Micro, Small and Medium Enterprises",
-      image: "https://i.ibb.co/zXqXGyz/udyam-cert.png", // Representative placeholder
-      description: "MSME recognition providing various benefits and credibility to the enterprise in the international market."
-    }
+
   ];
 
   return (
