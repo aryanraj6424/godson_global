@@ -73,7 +73,7 @@ const ProductDetail: React.FC = () => {
   };
 
   return (
-    <div className="pt-0 min-h-screen bg-white">
+    <div className="pt-0 min-h-screen bg-white overflow-x-hidden">
       {/* HERO BANNER - AUTOMATIC SLIDER */}
       <section className="relative h-[80vh] md:h-[95vh] overflow-hidden bg-black">
         {product.sliderImages.map((img, idx) => (
