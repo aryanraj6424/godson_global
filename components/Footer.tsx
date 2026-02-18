@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             <Link to="/" className="text-white/50 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">Home</Link>
             <Link to="/about" className="text-white/50 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">About</Link>
             <Link to="/product/hygiene/baby-diaper" className="text-white/50 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">Products</Link>
-            <Link to="/certificate" className="text-white/50 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">Certificates</Link>
+            {/* <Link to="/certificate" className="text-white/50 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">Certificates</Link> */}
             <Link to="/gallery" className="text-white/50 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">Gallery</Link>
             <Link to="/contact" className="text-white/50 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">Contact</Link>
           </div>

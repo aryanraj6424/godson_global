@@ -21,7 +21,7 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'Raisin', href: '#' },
     ],
   },
-  { label: 'Certificates', href: '/certificate' },
+  // { label: 'Certificates', href: '/certificate' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
