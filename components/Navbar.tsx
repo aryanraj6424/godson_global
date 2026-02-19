@@ -434,9 +434,198 @@
 
 
 
+// import React, { useState, useEffect } from 'react';
+// import { Link, useLocation } from 'react-router-dom';
+// import { Menu, X, ChevronDown } from 'lucide-react';
+// import { NAV_ITEMS } from '../constants';
+
+// const languages = [
+//   { code: 'en', label: 'English' },
+//   { code: 'hi', label: 'Hindi' },
+//   { code: 'bn', label: 'Bengali' },
+//   { code: 'mr', label: 'Marathi' },
+//   { code: 'ta', label: 'Tamil' },
+//   { code: 'te', label: 'Telugu' },
+//   { code: 'gu', label: 'Gujarati' },
+//   { code: 'kn', label: 'Kannada' },
+//   { code: 'pa', label: 'Punjabi' },
+//   { code: 'ur', label: 'Urdu' },
+//   { code: 'fr', label: 'French' },
+//   { code: 'de', label: 'German' },
+//   { code: 'es', label: 'Spanish' },
+//   { code: 'ar', label: 'Arabic' },
+//   { code: 'ru', label: 'Russian' },
+//   { code: 'zh-CN', label: 'Chinese' },
+//   { code: 'ja', label: 'Japanese' },
+//   { code: 'pt', label: 'Portuguese' },
+// ];
+
+// const Navbar: React.FC = () => {
+
+//   const [lang, setLang] = useState('en');
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const location = useLocation();
+
+//   /* scroll */
+//   useEffect(() => {
+//     const handleScroll = () => setScrolled(window.scrollY > 50);
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   /* load google translate */
+//   useEffect(() => {
+
+//     const id="googleTranslateScript";
+
+//     if(!document.getElementById(id)){
+
+//       const script=document.createElement("script");
+//       script.id=id;
+//       script.src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+//       script.async=true;
+
+//       document.body.appendChild(script);
+
+//       // @ts-ignore
+//       window.googleTranslateElementInit=()=>{
+
+//         // @ts-ignore
+//         new window.google.translate.TranslateElement(
+//           {
+//             pageLanguage:"en",
+//             autoDisplay:false
+//           },
+//           "google_translate_element"
+//         );
+
+//         setTimeout(()=>{
+//           document.body.style.top="0px";
+//         },1000);
+
+//       };
+//     }
+
+//   },[]);
+
+//   /* LANGUAGE CHANGE */
+//   const changeLanguage=(value:string)=>{
+
+//     setLang(value);
+
+//     const apply=()=>{
+
+//       const select=document.querySelector(".goog-te-combo") as HTMLSelectElement;
+
+//       if(select){
+
+//         document.cookie=`googtrans=/en/${value};path=/`;
+//         document.cookie=`googtrans=/en/${value};domain=${window.location.hostname};path=/`;
+
+//         select.value=value;
+//         select.dispatchEvent(new Event("change"));
+
+//         document.body.style.top="0px";
+
+//       }else{
+//         setTimeout(apply,300);
+//       }
+//     };
+
+//     apply();
+//   };
+
+//   return (
+//     <>
+//       {/* hidden google widget */}
+//       <div id="google_translate_element" style={{display:'none'}}/>
+
+//       {/* NAVBAR LOCKED FROM TRANSLATION */}
+//       <nav className={`notranslate fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+//         scrolled || isOpen
+//           ? 'bg-[#E6F2FF]/95 backdrop-blur-md border-b border-blue-100 py-3 shadow-sm'
+//           : 'bg-[#E6F2FF] py-6'
+//       }`}>
+
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+//           <div className="flex justify-between items-center">
+
+//             {/* LOGO */}
+//             <Link to="/">
+//               <div className="h-12 w-12 md:h-16 md:w-16 bg-white rounded-full border-2 border-[#26BAA4] shadow-lg overflow-hidden">
+//                 <img src="/uploads/logoo.png" className="h-full w-full object-contain scale-125"/>
+//               </div>
+//             </Link>
+
+//             {/* NAV ITEMS */}
+//             <div className="hidden md:flex items-center space-x-1">
+
+//               {NAV_ITEMS.map(item => (
+//                 <Link
+//                   key={item.label}
+//                   to={item.href === '#' ? location.pathname : item.href}
+//                   className="px-4 py-2 text-[13px] font-bold uppercase tracking-wider text-[#0A2540] hover:text-[#0077FF]"
+//                 >
+//                   {item.label}
+//                 </Link>
+//               ))}
+
+//               {/* LANGUAGE SELECT */}
+//               <div className="ml-4 relative notranslate">
+
+//                 <select
+//                   translate="no"
+//                   value={lang}
+//                   onChange={(e)=>changeLanguage(e.target.value)}
+//                   className="notranslate appearance-none border border-gray-400 bg-white text-[#0A2540] text-sm px-3 pr-8 py-1.5 rounded cursor-pointer w-[150px] h-[34px] focus:outline-none hover:border-[#0077FF]"
+//                 >
+//                   {languages.map(l=>(
+//                     <option key={l.code} value={l.code}>
+//                       {l.label}
+//                     </option>
+//                   ))}
+//                 </select>
+
+//                 <ChevronDown
+//                   size={16}
+//                   className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-gray-600"
+//                 />
+
+//               </div>
+
+//             </div>
+
+//             {/* MOBILE BUTTON */}
+//             <div className="md:hidden">
+//               <button onClick={()=>setIsOpen(!isOpen)}>
+//                 {isOpen ? <X size={26}/> : <Menu size={26}/>}
+//               </button>
+//             </div>
+
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* GLOBAL FIX STYLE */}
+//       <style>{`
+//         .goog-te-banner-frame.skiptranslate { display:none !important; }
+//         body { top:0px !important; }
+//         .goog-tooltip { display:none !important; }
+//         .goog-text-highlight { background:none !important; box-shadow:none !important; }
+//       `}</style>
+
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
 const languages = [
@@ -461,161 +650,172 @@ const languages = [
 ];
 
 const Navbar: React.FC = () => {
-
   const [lang, setLang] = useState('en');
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
 
-  /* scroll */
+  // Close menus on route change
+  useEffect(() => {
+    setIsOpen(false);
+    setActiveDropdown(null);
+  }, [location.pathname]);
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  /* load google translate */
+  // Initialize Google Translate
   useEffect(() => {
-
-    const id="googleTranslateScript";
-
-    if(!document.getElementById(id)){
-
-      const script=document.createElement("script");
-      script.id=id;
-      script.src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-      script.async=true;
-
+    const id = "googleTranslateScript";
+    if (!document.getElementById(id)) {
+      const script = document.createElement("script");
+      script.id = id;
+      script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
       document.body.appendChild(script);
-
+      
       // @ts-ignore
-      window.googleTranslateElementInit=()=>{
-
+      window.googleTranslateElementInit = () => {
         // @ts-ignore
         new window.google.translate.TranslateElement(
-          {
-            pageLanguage:"en",
-            autoDisplay:false
-          },
+          { pageLanguage: "en", autoDisplay: false },
           "google_translate_element"
         );
-
-        setTimeout(()=>{
-          document.body.style.top="0px";
-        },1000);
-
       };
     }
+  }, []);
 
-  },[]);
-
-  /* LANGUAGE CHANGE */
-  const changeLanguage=(value:string)=>{
-
+  const changeLanguage = (value: string) => {
     setLang(value);
+    
+    // 1. Set the cookie (Google Translate reads this)
+    document.cookie = `googtrans=/en/${value}; path=/`;
+    document.cookie = `googtrans=/en/${value}; domain=${window.location.hostname}; path=/`;
 
-    const apply=()=>{
-
-      const select=document.querySelector(".goog-te-combo") as HTMLSelectElement;
-
-      if(select){
-
-        document.cookie=`googtrans=/en/${value};path=/`;
-        document.cookie=`googtrans=/en/${value};domain=${window.location.hostname};path=/`;
-
-        select.value=value;
+    // 2. Update the hidden Google select box
+    const apply = () => {
+      const select = document.querySelector(".goog-te-combo") as HTMLSelectElement;
+      if (select) {
+        select.value = value;
         select.dispatchEvent(new Event("change"));
-
-        document.body.style.top="0px";
-
-      }else{
-        setTimeout(apply,300);
+      } else {
+        setTimeout(apply, 500);
       }
     };
-
     apply();
+
+    // 3. Optional: Refresh to ensure translation kicks in
+    // window.location.reload(); 
   };
 
   return (
     <>
-      {/* hidden google widget */}
-      <div id="google_translate_element" style={{display:'none'}}/>
+      <div id="google_translate_element" style={{ display: 'none' }} />
 
-      {/* NAVBAR LOCKED FROM TRANSLATION */}
-      <nav className={`notranslate fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      {/* REMOVED 'notranslate' from the main nav so text can change */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || isOpen
           ? 'bg-[#E6F2FF]/95 backdrop-blur-md border-b border-blue-100 py-3 shadow-sm'
           : 'bg-[#E6F2FF] py-6'
       }`}>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="flex justify-between items-center">
-
-            {/* LOGO */}
-            <Link to="/">
-              <div className="h-12 w-12 md:h-16 md:w-16 bg-white rounded-full border-2 border-[#26BAA4] shadow-lg overflow-hidden">
-                <img src="/uploads/logoo.png" className="h-full w-full object-contain scale-125"/>
+            
+            <Link to="/" className="group notranslate">
+              <div className="h-12 w-12 md:h-16 md:w-16 bg-white rounded-full border-2 border-red-600 shadow-lg overflow-hidden flex items-center justify-center">
+                <img src="/uploads/logoo.png" className="h-full w-full object-contain scale-110 p-1" alt="Logo" />
               </div>
             </Link>
 
-            {/* NAV ITEMS */}
             <div className="hidden md:flex items-center space-x-1">
-
-              {NAV_ITEMS.map(item => (
-                <Link
+              {NAV_ITEMS.map((item) => (
+                <div
                   key={item.label}
-                  to={item.href === '#' ? location.pathname : item.href}
-                  className="px-4 py-2 text-[13px] font-bold uppercase tracking-wider text-[#0A2540] hover:text-[#0077FF]"
+                  className="relative group"
+                  onMouseEnter={() => setActiveDropdown(item.label)}
+                  onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  {item.label}
-                </Link>
+                  <Link
+                    to={item.href === '#' ? location.pathname : item.href}
+                    className={`flex items-center px-4 py-2 text-[13px] font-bold uppercase tracking-wider transition-colors ${
+                      location.pathname === item.href ? 'text-[#0077FF]' : 'text-[#0A2540] hover:text-[#0077FF]'
+                    }`}
+                  >
+                    {item.label}
+                    {item.children && <ChevronDown className="ml-1 w-3 h-3" />}
+                  </Link>
+
+                  {item.children && activeDropdown === item.label && (
+                    <div className="absolute top-full left-0 pt-2 w-64">
+                      <div className="bg-white border border-gray-200 shadow-xl rounded-xl py-3 mt-1">
+                        {item.children.map((child) => (
+                          <div key={child.label} className="relative group/sub">
+                            <Link
+                              to={child.href}
+                              className="flex items-center justify-between px-5 py-3 text-xs font-bold uppercase tracking-wider text-gray-600 hover:bg-blue-50 hover:text-[#0077FF]"
+                            >
+                              {child.label}
+                              {child.children && <ChevronRight className="w-4 h-4" />}
+                            </Link>
+
+                            {child.children && (
+                              <div className="absolute left-full top-0 pl-1 w-64 hidden group-hover/sub:block">
+                                <div className="bg-white border border-gray-200 shadow-xl rounded-xl py-3 ml-1">
+                                  {child.children.map((subChild) => (
+                                    <Link
+                                      key={subChild.label}
+                                      to={subChild.href}
+                                      className="block px-5 py-3 text-xs font-bold uppercase tracking-wider text-gray-600 hover:bg-blue-50 hover:text-[#0077FF]"
+                                    >
+                                      {subChild.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
 
-              {/* LANGUAGE SELECT */}
+              {/* Language selector remains 'notranslate' so language names don't change */}
               <div className="ml-4 relative notranslate">
-
                 <select
-                  translate="no"
                   value={lang}
-                  onChange={(e)=>changeLanguage(e.target.value)}
-                  className="notranslate appearance-none border border-gray-400 bg-white text-[#0A2540] text-sm px-3 pr-8 py-1.5 rounded cursor-pointer w-[150px] h-[34px] focus:outline-none hover:border-[#0077FF]"
+                  onChange={(e) => changeLanguage(e.target.value)}
+                  className="appearance-none border border-gray-400 bg-white text-[#0A2540] text-sm px-3 pr-8 py-1.5 rounded cursor-pointer w-[150px] h-[34px] focus:outline-none hover:border-red-600"
                 >
-                  {languages.map(l=>(
-                    <option key={l.code} value={l.code}>
-                      {l.label}
-                    </option>
+                  {languages.map(l => (
+                    <option key={l.code} value={l.code}>{l.label}</option>
                   ))}
                 </select>
-
-                <ChevronDown
-                  size={16}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-gray-600"
-                />
-
+                <ChevronDown size={16} className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-gray-600" />
               </div>
-
             </div>
 
-            {/* MOBILE BUTTON */}
             <div className="md:hidden">
-              <button onClick={()=>setIsOpen(!isOpen)}>
-                {isOpen ? <X size={26}/> : <Menu size={26}/>}
+              <button onClick={() => setIsOpen(!isOpen)} className="text-[#0A2540]">
+                {isOpen ? <X size={26} /> : <Menu size={26} />}
               </button>
             </div>
-
           </div>
         </div>
       </nav>
 
-      {/* GLOBAL FIX STYLE */}
       <style>{`
         .goog-te-banner-frame.skiptranslate { display:none !important; }
-        body { top:0px !important; }
+        body { top:0px !important; position: static !important; }
         .goog-tooltip { display:none !important; }
         .goog-text-highlight { background:none !important; box-shadow:none !important; }
+        #google_translate_element { display: none !important; }
       `}</style>
-
     </>
   );
 };

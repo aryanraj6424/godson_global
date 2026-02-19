@@ -39,12 +39,16 @@ export interface ExtendedProduct extends Product {
 export const PRODUCTS: Record<string, ExtendedProduct> = {
   'baby-diaper': {
     id: 'baby-diaper',
-    heroHeading: 'Baby Diaper',
+    heroHeading: (
+      <>
+        <span style={{ color: 'darkred' }}>Baby Diaper</span>{' '} <br />
+        <span style={{ color: '#ff4d4d', fontSize: '0.9em' }}>(HSN CODE: 96190040)</span>
+      </>),
     name: 'Godson Baby Diapers',
     category: 'Hygiene Product',
     description: 'Specially designed to provide superior comfort, dryness, and protection for babies at every stage.',
     fullDescription: 'Our high-quality baby diapers are manufactured with soft, skin-friendly materials and advanced absorbent technology. They ensure excellent leakage control, high absorbency, and gentle care for delicate baby skin. They are suitable for both active babies and overnight use, providing convenience for parents and caregivers.',
-    image: '/uploads/babypad1.png',
+    image: '/uploads/baby1.png',
     sliderImages: [
       '/uploads/babybanner1.png',
       
@@ -81,12 +85,16 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
   },
   'adult-diaper': {
     id: 'adult-diaper',
-    heroHeading: 'Adult Diaper',
+    heroHeading: (
+      <>
+        <span style={{ color: 'darkred' }}>Adult Diaper</span>{' '} <br />
+        <span style={{ color: '#ff4d4d', fontSize: '0.9em' }}>(HSN CODE: 96190040)</span>
+      </>),
     name: 'Godson Adult Diapers',
     category: 'Hygiene Product',
     description: 'Designed to deliver superior comfort, protection, and dignity for daily personal care needs.',
     fullDescription: 'Our adult diapers are manufactured using advanced technology and high-quality materials. They offer excellent absorbency, reliable leakage control, and skin-friendly softness. Suitable for both active users and assisted care environments, these diapers are trusted by international buyers for healthcare, retail, and private-label distribution.',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1000&auto=format&fit=crop',
+    image: '/uploads/adult1.png',
     sliderImages: [
       'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2000&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1586773860418-d37222d8fce2?q=80&w=2000&auto=format&fit=crop',
@@ -124,7 +132,11 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
   },
   'underpads': {
     id: 'underpads',
-    heroHeading: 'Underpads',
+    heroHeading: (
+      <>
+        <span style={{ color: 'darkred' }}>Adult Diaper</span>{' '} <br />
+        <span style={{ color: '#ff4d4d', fontSize: '0.9em' }}>(HSN CODE: 96190090)</span>
+      </>),
     name: 'Godson Protective Underpads',
     category: 'Hygiene Product',
     description: 'Highly absorbent pads designed to protect surfaces like beds, chairs, and furniture from fluid damage.',

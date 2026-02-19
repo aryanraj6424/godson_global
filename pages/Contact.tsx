@@ -167,9 +167,437 @@
 // export default Contact;
 
 
+// import React, { useState } from 'react';
+// import { Send, MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+// import { MessageCircle } from 'lucide-react';
+
+// const Contact: React.FC = () => {
+
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     country: '',
+//     phone: '',
+//     message: ''
+//   });
+
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     alert("Message sent! We'll get back to you within 24 hours.");
+//   };
+
+//   return (
+//     <div className="bg-white min-h-screen">
+
+//       {/* HERO */}
+//       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+//         <div className="absolute inset-0">
+//           <img 
+//             src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=2400&auto=format&fit=crop"
+//             className="w-full h-full object-cover"
+//           />
+//           <div className="absolute inset-0 bg-[#050C1A]/80"></div>
+//         </div>
+
+//         <div className="relative z-10 text-center px-4">
+//           <h4 className="text-[#26BAA4] text-sm font-bold tracking-[0.4em] uppercase mb-4">
+//             Godson Global
+//           </h4>
+
+//           <h1 className="text-6xl md:text-[90px] font-serif text-white uppercase leading-none">
+//             Contact Us
+//           </h1>
+
+//           <div className="w-20 h-1 bg-[#26BAA4] mx-auto mt-8"></div>
+//         </div>
+//       </section>
+
+
+//       {/* MAIN */}
+//       <section className="relative min-h-[80vh] overflow-hidden">
+
+//         <div className="absolute inset-0">
+//           <img 
+//             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2400&auto=format&fit=crop"
+//             className="w-full h-full object-cover"
+//           />
+//           <div className="absolute inset-0 bg-[#050C1A]/85"></div>
+//         </div>
+
+//         <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
+
+//           <div className="flex flex-col lg:flex-row shadow-2xl rounded-2xl overflow-hidden">
+
+
+//             {/* LEFT SIDEBAR → GREY */}
+//             <div className="lg:w-2/5 bg-gray-600 p-10 md:p-16 space-y-12 text-white">
+
+//               {/* LOCATION */}
+//               <div className="flex items-start">
+//                 <MapPin className="w-8 h-8 mr-6 mt-1 shrink-0"/>
+//                 <div>
+//                   <h3 className="text-2xl font-bold mb-4 uppercase">Location</h3>
+//                   <p className="text-lg">
+//                     B-1131 Tower B, ITHUM TOWER<br/>
+//                     11th floor, Plot no. A 40, Sector 62, Noida<br/>
+//                     Uttar Pradesh – 201309, India
+//                   </p>
+//                 </div>
+//               </div>
+
+//               {/* PHONE */}
+//               <div className="flex items-start">
+//                 <Phone className="w-8 h-8 mr-6 mt-1 shrink-0"/>
+//                 <div>
+//                   <h3 className="text-2xl font-bold mb-4 uppercase">Phone</h3>
+//                   <p className="text-lg">+91 93545 03193</p>
+//                   <p className="text-lg">+91 98708 64385</p>
+//                 </div>
+//               </div>
+
+//               {/* EMAIL */}
+//               <div className="flex items-start">
+//                 <Mail className="w-8 h-8 mr-6 mt-1 shrink-0"/>
+//                 <div>
+//                   <h3 className="text-2xl font-bold mb-4 uppercase">Email</h3>
+//                   <p className="text-lg">abhayraj.godson@gmail.com</p>
+//                   <p className="text-lg">richa.godson@gmail.com</p>
+//                   <p className="text-lg">godsonglobal24@gmail.com</p>
+//                 </div>
+//               </div>
+
+//               {/* HOURS UPDATED */}
+//               <div className="flex items-start">
+//                 <Clock className="w-8 h-8 mr-6 mt-1 shrink-0"/>
+//                 <div>
+//                   <h3 className="text-2xl font-bold mb-4 uppercase">
+//                     Opening Hours (IST)
+//                   </h3>
+
+//                   <div className="text-lg space-y-1">
+//                     <p><b>Monday – Saturday:</b> 9 am – 9 pm</p>
+//                     <p><b>Sunday:</b> Closed</p>
+//                   </div>
+//                 </div>
+//               </div>
+
+//             </div>
+
+
+//             {/* RIGHT FORM */}
+//             <div className="lg:w-3/5 bg-black/20 backdrop-blur-md p-10 md:p-16">
+
+//               <h2 className="text-5xl font-serif text-white mb-10">Send A Message</h2>
+
+//               <form onSubmit={handleSubmit} className="space-y-10">
+
+//                 {/* NAME + EMAIL */}
+//                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+//                   <input
+//                     placeholder="Name"
+//                     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
+//                     onChange={(e)=>setFormData({...formData,name:e.target.value})}
+//                     required
+//                   />
+
+//                   <input
+//                     type="email"
+//                     placeholder="Email Address"
+//                     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
+//                     onChange={(e)=>setFormData({...formData,email:e.target.value})}
+//                     required
+//                   />
+
+//                 </div>
+
+//                 {/* COUNTRY + PHONE ADDED */}
+//                 {/* NAME + EMAIL */}
+// <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+//   <input
+//     placeholder="Name"
+//     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
+//     onChange={(e)=>setFormData({...formData,name:e.target.value})}
+//     required
+//   />
+
+//   <input
+//     type="email"
+//     placeholder="Email Address"
+//     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
+//     onChange={(e)=>setFormData({...formData,email:e.target.value})}
+//     required
+//   />
+
+// </div>
+
+
+// {/* COUNTRY + PHONE */}
+// <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+//   <input
+//     placeholder="Country"
+//     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
+//     onChange={(e)=>setFormData({...formData,country:e.target.value})}
+//     required
+//   />
+
+//   <input
+//     placeholder="Phone Number"
+//     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
+//     onChange={(e)=>setFormData({...formData,phone:e.target.value})}
+//     required
+//   />
+
+// </div>
+
+
+// {/* MESSAGE */}
+// <textarea
+//   rows={5}
+//   placeholder="Message"
+//   className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-xl focus:outline-none focus:border-gray-400 backdrop-blur-sm transition resize-none"
+//   onChange={(e)=>setFormData({...formData,message:e.target.value})}
+//   required
+// />
+
+
+//               </form>
+
+
+//               {/* SOCIALS → NEW TAB + WHATSAPP */}
+//               <div className="mt-16">
+//                 <h3 className="text-5xl font-serif text-white mb-10">Reach Us</h3>
+
+//                 <div className="flex space-x-6">
+
+//                   <a target="_blank" rel="noopener noreferrer"
+//                   href="https://www.facebook.com/people/Godson-Global/61571279177409/"
+//                   className="w-14 h-14 bg-[#3b5998] flex items-center justify-center rounded text-white">
+//                     <Facebook/>
+//                   </a>
+
+//                   <a target="_blank" rel="noopener noreferrer"
+//                   href="https://www.instagram.com/godson_global_/"
+//                   className="w-14 h-14 bg-[#E1306C] flex items-center justify-center rounded text-white">
+//                     <Instagram/>
+//                   </a>
+
+//                   <a target="_blank" rel="noopener noreferrer"
+//                   href="https://www.linkedin.com/company/godson-global-pvt-ltd/"
+//                   className="w-14 h-14 bg-[#0077B5] flex items-center justify-center rounded text-white">
+//                     <Linkedin/>
+//                   </a>
+
+//                   <a target="_blank" rel="noopener noreferrer"
+//                   href="https://www.youtube.com/@GodsonGlobal"
+//                   className="w-14 h-14 bg-[#FF0000] flex items-center justify-center rounded text-white">
+//                     <Youtube/>
+//                   </a>
+
+//                   {/* WHATSAPP ADDED */}
+//                   <a target="_blank" rel="noopener noreferrer"
+//                   href="https://wa.me/919354503193"
+//                   className="w-14 h-14 bg-[#25D366] flex items-center justify-center rounded text-white">
+//                     <MessageCircle/>
+//                   </a>
+
+//                 </div>
+//               </div>
+
+//             </div>
+
+//           </div>
+
+//         </div>
+//       </section>
+
+//     </div>
+//   );
+// };
+
+// export default Contact;
+
+
+// import React, { useState } from 'react';
+// import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+// // FaWhatsapp import kiya gaya hai
+// import { FaSquareWhatsapp } from "react-icons/fa6"; 
+
+// const Contact: React.FC = () => {
+
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     country: '',
+//     phone: '',
+//     message: ''
+//   });
+
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     alert("Message sent! We'll get back to you within 24 hours.");
+//   };
+
+//   return (
+//     <div className="bg-white min-h-screen">
+
+//       {/* HERO SECTION */}
+//       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+//         <div className="absolute inset-0">
+//           <img 
+//             src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=2400&auto=format&fit=crop"
+//             className="w-full h-full object-cover"
+//             alt="Hero"
+//           />
+//           <div className="absolute inset-0 bg-[#050C1A]/80"></div>
+//         </div>
+
+//         <div className="relative z-10 text-center px-4">
+//           <h4 className="text-[#26BAA4] text-sm font-bold tracking-[0.4em] uppercase mb-4">
+//             Godson Global
+//           </h4>
+//           <h1 className="text-6xl md:text-[90px] font-serif text-white uppercase leading-none">
+//             Contact Us
+//           </h1>
+//           <div className="w-20 h-1 bg-[#26BAA4] mx-auto mt-8"></div>
+//         </div>
+//       </section>
+
+//       {/* MAIN CONTENT */}
+//       <section className="relative min-h-[80vh] overflow-hidden">
+//         <div className="absolute inset-0">
+//           <img 
+//             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2400&auto=format&fit=crop"
+//             className="w-full h-full object-cover"
+//             alt="Background"
+//           />
+//           <div className="absolute inset-0 bg-[#050C1A]/85"></div>
+//         </div>
+
+//         <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
+//           <div className="flex flex-col lg:flex-row shadow-2xl rounded-2xl overflow-hidden">
+
+//             {/* LEFT SIDEBAR */}
+//             <div className="lg:w-2/5 bg-gray-600 p-10 md:p-16 space-y-12 text-white">
+//               <div className="flex items-start">
+//                 <MapPin className="w-8 h-8 mr-6 mt-1 shrink-0"/>
+//                 <div>
+//                   <h3 className="text-2xl font-bold mb-4 uppercase">Location</h3>
+//                   <p className="text-lg">
+//                     B-1131 Tower B, ITHUM TOWER<br/>
+//                     11th floor, Plot no. A 40, Sector 62, Noida<br/>
+//                     Uttar Pradesh – 201309, India
+//                   </p>
+//                 </div>
+//               </div>
+
+//               <div className="flex items-start">
+//                 <Phone className="w-8 h-8 mr-6 mt-1 shrink-0"/>
+//                 <div>
+//                   <h3 className="text-2xl font-bold mb-4 uppercase">Phone</h3>
+//                   <p className="text-lg">+91 93545 03193</p>
+//                   <p className="text-lg">+91 98708 64385</p>
+//                 </div>
+//               </div>
+
+//               <div className="flex items-start">
+//                 <Mail className="w-8 h-8 mr-6 mt-1 shrink-0"/>
+//                 <div>
+//                   <h3 className="text-2xl font-bold mb-4 uppercase">Email</h3>
+//                   <p className="text-lg">abhayraj.godson@gmail.com</p>
+//                   <p className="text-lg">richa.godson@gmail.com</p>
+//                   <p className="text-lg">godsonglobal24@gmail.com</p>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* RIGHT FORM */}
+//             <div className="lg:w-3/5 bg-black/20 backdrop-blur-md p-10 md:p-16">
+//               <h2 className="text-5xl font-serif text-white mb-10">Send A Message</h2>
+//               <form onSubmit={handleSubmit} className="space-y-10">
+//                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+//                   <input
+//                     placeholder="Name"
+//                     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400"
+//                     onChange={(e)=>setFormData({...formData, name:e.target.value})}
+//                     required
+//                   />
+//                   <input
+//                     type="email"
+//                     placeholder="Email Address"
+//                     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400"
+//                     onChange={(e)=>setFormData({...formData, email:e.target.value})}
+//                     required
+//                   />
+//                 </div>
+//                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+//                   <input
+//                     placeholder="Country"
+//                     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400"
+//                     onChange={(e)=>setFormData({...formData, country:e.target.value})}
+//                     required
+//                   />
+//                   <input
+//                     placeholder="Phone Number"
+//                     className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400"
+//                     onChange={(e)=>setFormData({...formData, phone:e.target.value})}
+//                     required
+//                   />
+//                 </div>
+//                 <textarea
+//                   rows={5}
+//                   placeholder="Message"
+//                   className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-xl focus:outline-none focus:border-gray-400 resize-none"
+//                   onChange={(e)=>setFormData({...formData, message:e.target.value})}
+//                   required
+//                 />
+//                 <button type="submit" className="bg-[#26BAA4] text-white px-8 py-4 rounded-lg font-bold uppercase hover:bg-[#1f9684] transition">
+//                     Send Message
+//                 </button>
+//               </form>
+
+//               {/* SOCIALS */}
+//               <div className="mt-16">
+//                 <h3 className="text-5xl font-serif text-white mb-10">Reach Us</h3>
+//                 <div className="flex space-x-6">
+//                   <a target="_blank" rel="noopener noreferrer" href="https://facebook.com" className="w-14 h-14 bg-[#3b5998] flex items-center justify-center rounded text-white hover:scale-110 transition"><Facebook/></a>
+//                   <a target="_blank" rel="noopener noreferrer" href="https://instagram.com" className="w-14 h-14 bg-[#E1306C] flex items-center justify-center rounded text-white hover:scale-110 transition"><Instagram/></a>
+//                   <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com" className="w-14 h-14 bg-[#0077B5] flex items-center justify-center rounded text-white hover:scale-110 transition"><Linkedin/></a>
+//                   <a target="_blank" rel="noopener noreferrer" href="https://youtube.com" className="w-14 h-14 bg-[#FF0000] flex items-center justify-center rounded text-white hover:scale-110 transition"><Youtube/></a>
+
+//                   {/* UPDATED WHATSAPP ICON */}
+//                   <a 
+//                     target="_blank" 
+//                     rel="noopener noreferrer" 
+//                     href="https://wa.me/919354503193" 
+//                     className="w-14 h-14 bg-[#25D366] flex items-center justify-center rounded-lg shadow-lg hover:scale-110 transition"
+//                   >
+//                     <FaSquareWhatsapp className="text-white text-3xl" />
+                    
+//                   </a>
+
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// };
+
+// export default Contact;
+
+
+
+
+
 import React, { useState } from 'react';
-import { Send, MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
-import { MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+// FaWhatsapp import kiya gaya hai
+import { FaSquareWhatsapp } from "react-icons/fa6"; 
 
 const Contact: React.FC = () => {
 
@@ -189,50 +617,46 @@ const Contact: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=2400&auto=format&fit=crop"
             className="w-full h-full object-cover"
+            alt="Hero"
           />
           <div className="absolute inset-0 bg-[#050C1A]/80"></div>
         </div>
 
         <div className="relative z-10 text-center px-4">
           <h4 className="text-[#26BAA4] text-sm font-bold tracking-[0.4em] uppercase mb-4">
+            <br />
+            <br /> <br /> <br /><br />
             Godson Global
           </h4>
-
           <h1 className="text-6xl md:text-[90px] font-serif text-white uppercase leading-none">
             Contact Us
           </h1>
-
           <div className="w-20 h-1 bg-[#26BAA4] mx-auto mt-8"></div>
         </div>
       </section>
 
-
-      {/* MAIN */}
+      {/* MAIN CONTENT */}
       <section className="relative min-h-[80vh] overflow-hidden">
-
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2400&auto=format&fit=crop"
             className="w-full h-full object-cover"
+            alt="Background"
           />
           <div className="absolute inset-0 bg-[#050C1A]/85"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
-
           <div className="flex flex-col lg:flex-row shadow-2xl rounded-2xl overflow-hidden">
 
-
-            {/* LEFT SIDEBAR → GREY */}
+            {/* LEFT SIDEBAR */}
             <div className="lg:w-2/5 bg-gray-600 p-10 md:p-16 space-y-12 text-white">
-
-              {/* LOCATION */}
               <div className="flex items-start">
                 <MapPin className="w-8 h-8 mr-6 mt-1 shrink-0"/>
                 <div>
@@ -245,7 +669,6 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* PHONE */}
               <div className="flex items-start">
                 <Phone className="w-8 h-8 mr-6 mt-1 shrink-0"/>
                 <div>
@@ -255,7 +678,6 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* EMAIL */}
               <div className="flex items-start">
                 <Mail className="w-8 h-8 mr-6 mt-1 shrink-0"/>
                 <div>
@@ -266,153 +688,91 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* HOURS UPDATED */}
+              {/* OPENING HOURS SECTION ADDED */}
               <div className="flex items-start">
                 <Clock className="w-8 h-8 mr-6 mt-1 shrink-0"/>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 uppercase">
-                    Opening Hours (IST)
-                  </h3>
-
-                  <div className="text-lg space-y-1">
-                    <p><b>Monday – Saturday:</b> 9 am – 9 pm</p>
-                    <p><b>Sunday:</b> Closed</p>
-                  </div>
+                  <h3 className="text-2xl font-bold mb-4 uppercase">Opening Hours (IST)</h3>
+                  <p className="text-lg">
+                    <span className="font-bold">Monday – Saturday:</span> 9 am – 9 pm<br/>
+                    <span className="font-bold">Sunday:</span> Closed
+                  </p>
                 </div>
               </div>
 
             </div>
-
 
             {/* RIGHT FORM */}
             <div className="lg:w-3/5 bg-black/20 backdrop-blur-md p-10 md:p-16">
-
               <h2 className="text-5xl font-serif text-white mb-10">Send A Message</h2>
-
               <form onSubmit={handleSubmit} className="space-y-10">
-
-                {/* NAME + EMAIL */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-
                   <input
                     placeholder="Name"
-                    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
-                    onChange={(e)=>setFormData({...formData,name:e.target.value})}
+                    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400"
+                    onChange={(e)=>setFormData({...formData, name:e.target.value})}
                     required
                   />
-
                   <input
                     type="email"
                     placeholder="Email Address"
-                    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
-                    onChange={(e)=>setFormData({...formData,email:e.target.value})}
+                    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400"
+                    onChange={(e)=>setFormData({...formData, email:e.target.value})}
                     required
                   />
-
                 </div>
-
-                {/* COUNTRY + PHONE ADDED */}
-                {/* NAME + EMAIL */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-  <input
-    placeholder="Name"
-    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
-    onChange={(e)=>setFormData({...formData,name:e.target.value})}
-    required
-  />
-
-  <input
-    type="email"
-    placeholder="Email Address"
-    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
-    onChange={(e)=>setFormData({...formData,email:e.target.value})}
-    required
-  />
-
-</div>
-
-
-{/* COUNTRY + PHONE */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-  <input
-    placeholder="Country"
-    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
-    onChange={(e)=>setFormData({...formData,country:e.target.value})}
-    required
-  />
-
-  <input
-    placeholder="Phone Number"
-    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400 backdrop-blur-sm transition"
-    onChange={(e)=>setFormData({...formData,phone:e.target.value})}
-    required
-  />
-
-</div>
-
-
-{/* MESSAGE */}
-<textarea
-  rows={5}
-  placeholder="Message"
-  className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-xl focus:outline-none focus:border-gray-400 backdrop-blur-sm transition resize-none"
-  onChange={(e)=>setFormData({...formData,message:e.target.value})}
-  required
-/>
-
-
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <input
+                    placeholder="Country"
+                    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400"
+                    onChange={(e)=>setFormData({...formData, country:e.target.value})}
+                    required
+                  />
+                  <input
+                    placeholder="Phone Number"
+                    className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-lg focus:outline-none focus:border-gray-400"
+                    onChange={(e)=>setFormData({...formData, phone:e.target.value})}
+                    required
+                  />
+                </div>
+                <textarea
+                  rows={5}
+                  placeholder="Message"
+                  className="w-full bg-white/10 border border-white/20 px-5 py-4 text-white rounded-xl focus:outline-none focus:border-gray-400 resize-none"
+                  onChange={(e)=>setFormData({...formData, message:e.target.value})}
+                  required
+                />
+                <button type="submit" className="bg-[#26BAA4] text-white px-8 py-4 rounded-lg font-bold uppercase hover:bg-[#1f9684] transition">
+                    Send Message
+                </button>
               </form>
 
-
-              {/* SOCIALS → NEW TAB + WHATSAPP */}
+              {/* SOCIALS */}
               <div className="mt-16">
                 <h3 className="text-5xl font-serif text-white mb-10">Reach Us</h3>
-
                 <div className="flex space-x-6">
+                  <a target="_blank" rel="noopener noreferrer" href="https://facebook.com" className="w-14 h-14 bg-[#3b5998] flex items-center justify-center rounded text-white hover:scale-110 transition"><Facebook/></a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://instagram.com" className="w-14 h-14 bg-[#E1306C] flex items-center justify-center rounded text-white hover:scale-110 transition"><Instagram/></a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com" className="w-14 h-14 bg-[#0077B5] flex items-center justify-center rounded text-white hover:scale-110 transition"><Linkedin/></a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://youtube.com" className="w-14 h-14 bg-[#FF0000] flex items-center justify-center rounded text-white hover:scale-110 transition"><Youtube/></a>
 
-                  <a target="_blank" rel="noopener noreferrer"
-                  href="https://www.facebook.com/people/Godson-Global/61571279177409/"
-                  className="w-14 h-14 bg-[#3b5998] flex items-center justify-center rounded text-white">
-                    <Facebook/>
-                  </a>
-
-                  <a target="_blank" rel="noopener noreferrer"
-                  href="https://www.instagram.com/godson_global_/"
-                  className="w-14 h-14 bg-[#E1306C] flex items-center justify-center rounded text-white">
-                    <Instagram/>
-                  </a>
-
-                  <a target="_blank" rel="noopener noreferrer"
-                  href="https://www.linkedin.com/company/godson-global-pvt-ltd/"
-                  className="w-14 h-14 bg-[#0077B5] flex items-center justify-center rounded text-white">
-                    <Linkedin/>
-                  </a>
-
-                  <a target="_blank" rel="noopener noreferrer"
-                  href="https://www.youtube.com/@GodsonGlobal"
-                  className="w-14 h-14 bg-[#FF0000] flex items-center justify-center rounded text-white">
-                    <Youtube/>
-                  </a>
-
-                  {/* WHATSAPP ADDED */}
-                  <a target="_blank" rel="noopener noreferrer"
-                  href="https://wa.me/919354503193"
-                  className="w-14 h-14 bg-[#25D366] flex items-center justify-center rounded text-white">
-                    <MessageCircle/>
+                  {/* UPDATED WHATSAPP ICON */}
+                  <a 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    href="https://wa.me/919354503193" 
+                    className="w-14 h-14 bg-[#25D366] flex items-center justify-center rounded-lg shadow-lg hover:scale-110 transition"
+                  >
+                    <FaSquareWhatsapp className="text-white text-3xl" />
+                    
                   </a>
 
                 </div>
               </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
     </div>
   );
 };

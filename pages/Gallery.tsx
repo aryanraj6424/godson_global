@@ -133,29 +133,27 @@ const Gallery: React.FC = () => {
 
   const categories = [
     "All",
-    "Advertising",
+    "Trade Shows",
     "Business Development Meeting",
-    "Freight",
-    "Field Visits",
-    "Community Service"
+    "Factory Visits",
   ];
 
   const [active, setActive] = useState("All");
   const [hoveredImg, setHoveredImg] = useState<string | null>(null);
 
   const galleryImages = [
-    { url: "/gallery/img1.jpeg", category: "Advertising" },
-    { url: "/gallery/img2.jpeg", category: "Field Visits" },
-    { url: "/gallery/img3.jpeg", category: "Community Service" },
-    { url: "/gallery/img4.jpeg", category: "Freight" },
-    { url: "/gallery/img5.jpeg", category: "Business Development Meeting" },
-    { url: "/gallery/img6.jpeg", category: "Advertising" },
-    { url: "/gallery/img7.jpeg", category: "Freight" },
-    { url: "/gallery/img8.jpeg", category: "Community Service" },
-    { url: "/gallery/img9.jpeg", category: "Field Visits" },
-    { url: "/gallery/img10.jpeg", category: "Advertising" },
-    { url: "/gallery/img11.jpeg", category: "Business Development Meeting" },
-    { url: "/gallery/img12.jpeg", category: "Freight" },
+    { url: "/gallery/img1.jpeg", category: "Business Development Meeting" },
+    { url: "/gallery/img2.jpeg", category: "Trade Shows" },
+    { url: "/gallery/img3.jpeg", category: "Factory Visits" },
+    { url: "/gallery/img4.jpeg", category: "Trade Shows" },
+    { url: "/gallery/img5.jpeg", category: "Trade Shows" },
+    { url: "/gallery/img6.jpeg", category: "Trade Shows" },
+    { url: "/gallery/img7.jpeg", category: "Business Development Meeting" },
+    { url: "/gallery/img8.jpeg", category: "Business Development Meeting" },
+    { url: "/gallery/img9.jpeg", category: "Business Development Meeting" },
+    { url: "/gallery/img10.jpeg", category: "Factory Visits" },
+    { url: "/gallery/img11.jpeg", category: "Factory Visits" },
+    { url: "/gallery/img12.jpeg", category: "Business Development Meeting" },
   ];
 
   const filtered =
@@ -167,35 +165,37 @@ const Gallery: React.FC = () => {
     <div className="bg-white">
 
       {/* HERO */}
-      <section className="relative h-[15vh] flex items-center justify-center overflow-hidden">
-        {/* <div className="absolute inset-0">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=2400&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop"
+            alt="Logistics Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#050C1A]/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050C1A]/90 to-[#050C1A]/70"></div>
         </div>
 
-        <div className="relative z-10 text-center">
-          <h1 className="text-white text-6xl md:text-[80px] font-serif tracking-tight">
-            GALLERY
+        <div className="relative z-10 text-center px-4">
+          <h4 className="text-[#26BAA4] text-xs md:text-sm font-bold tracking-[0.5em] uppercase mb-4">
+            <br /><br /><br /><br />
+          </h4>
+          <h1 className="text-5xl md:text-7xl font-serif text-white tracking-tight leading-tight">
+            Our Gallery
           </h1>
-        </div> */}
+          <div className="w-24 h-1 bg-[#26BAA4] mx-auto mt-6"></div>
+        </div>
       </section>
 
 
       {/* GALLERY */}
       <section className="py-24 bg-[#F9FAFB]">
-
+            
         <div className="max-w-7xl mx-auto px-4">
-
+         
           {/* TITLE */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold tracking-wide text-[#050C1A]">
-              OUR GALLERY
-            </h2>
-            <div className="w-20 h-1 bg-[#26BAA4] mx-auto mt-4 rounded"></div>
-          </div>
+          <section className="relative h-[1vh] flex items-center justify-center overflow-hidden">
+      
+      </section>
 
 
           {/* FILTER BUTTONS */}
