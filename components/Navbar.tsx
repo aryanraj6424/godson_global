@@ -623,198 +623,519 @@
 // export default Navbar;
 
 
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
-import { NAV_ITEMS } from '../constants';
+// import React, { useState, useEffect } from 'react';
+// import { Link, useLocation } from 'react-router-dom';
+// import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
+// import { NAV_ITEMS } from '../constants';
+
+// const languages = [
+//   { code: 'en', label: 'English' },
+//   { code: 'hi', label: 'Hindi' },
+//   { code: 'bn', label: 'Bengali' },
+//   { code: 'mr', label: 'Marathi' },
+//   { code: 'ta', label: 'Tamil' },
+//   { code: 'te', label: 'Telugu' },
+//   { code: 'gu', label: 'Gujarati' },
+//   { code: 'kn', label: 'Kannada' },
+//   { code: 'pa', label: 'Punjabi' },
+//   { code: 'ur', label: 'Urdu' },
+//   { code: 'fr', label: 'French' },
+//   { code: 'de', label: 'German' },
+//   { code: 'es', label: 'Spanish' },
+//   { code: 'ar', label: 'Arabic' },
+//   { code: 'ru', label: 'Russian' },
+//   { code: 'zh-CN', label: 'Chinese' },
+//   { code: 'ja', label: 'Japanese' },
+//   { code: 'pt', label: 'Portuguese' },
+// ];
+
+// const Navbar: React.FC = () => {
+//   const [lang, setLang] = useState('en');
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+//   const location = useLocation();
+
+//   // Close menus on route change
+//   useEffect(() => {
+//     setIsOpen(false);
+//     setActiveDropdown(null);
+//   }, [location.pathname]);
+
+//   useEffect(() => {
+//     const handleScroll = () => setScrolled(window.scrollY > 50);
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   // Initialize Google Translate
+//   useEffect(() => {
+//     const id = "googleTranslateScript";
+//     if (!document.getElementById(id)) {
+//       const script = document.createElement("script");
+//       script.id = id;
+//       script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+//       script.async = true;
+//       document.body.appendChild(script);
+      
+//       // @ts-ignore
+//       window.googleTranslateElementInit = () => {
+//         // @ts-ignore
+//         new window.google.translate.TranslateElement(
+//           { pageLanguage: "en", autoDisplay: false },
+//           "google_translate_element"
+//         );
+//       };
+//     }
+//   }, []);
+
+//   const changeLanguage = (value: string) => {
+//     setLang(value);
+    
+//     // 1. Set the cookie (Google Translate reads this)
+//     document.cookie = `googtrans=/en/${value}; path=/`;
+//     document.cookie = `googtrans=/en/${value}; domain=${window.location.hostname}; path=/`;
+
+//     // 2. Update the hidden Google select box
+//     const apply = () => {
+//       const select = document.querySelector(".goog-te-combo") as HTMLSelectElement;
+//       if (select) {
+//         select.value = value;
+//         select.dispatchEvent(new Event("change"));
+//       } else {
+//         setTimeout(apply, 500);
+//       }
+//     };
+//     apply();
+
+//     // 3. Optional: Refresh to ensure translation kicks in
+//     // window.location.reload(); 
+//   };
+
+//   return (
+//     <>
+//       <div id="google_translate_element" style={{ display: 'none' }} />
+
+//       {/* REMOVED 'notranslate' from the main nav so text can change */}
+//       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+//         scrolled || isOpen
+//           ? 'bg-[#E6F2FF]/95 backdrop-blur-md border-b border-blue-100 py-3 shadow-sm'
+//           : 'bg-[#E6F2FF] py-6'
+//       }`}>
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="flex justify-between items-center">
+            
+//             <Link to="/" className="group notranslate">
+//               <div className="h-12 w-12 md:h-16 md:w-16 bg-white rounded-full border-2 border-red-600 shadow-lg overflow-hidden flex items-center justify-center">
+//                 <img src="/uploads/logoo.png" className="h-full w-full object-contain scale-110 p-1" alt="Logo" />
+//               </div>
+//             </Link>
+
+//             <div className="hidden md:flex items-center space-x-1">
+//               {NAV_ITEMS.map((item) => (
+//                 <div
+//                   key={item.label}
+//                   className="relative group"
+//                   onMouseEnter={() => setActiveDropdown(item.label)}
+//                   onMouseLeave={() => setActiveDropdown(null)}
+//                 >
+//                   <Link
+//                     to={item.href === '#' ? location.pathname : item.href}
+//                     className={`flex items-center px-4 py-2 text-[13px] font-bold uppercase tracking-wider transition-colors ${
+//                       location.pathname === item.href ? 'text-[#0077FF]' : 'text-[#0A2540] hover:text-[#0077FF]'
+//                     }`}
+//                   >
+//                     {item.label}
+//                     {item.children && <ChevronDown className="ml-1 w-3 h-3" />}
+//                   </Link>
+
+//                   {item.children && activeDropdown === item.label && (
+//                     <div className="absolute top-full left-0 pt-2 w-64">
+//                       <div className="bg-white border border-gray-200 shadow-xl rounded-xl py-3 mt-1">
+//                         {item.children.map((child) => (
+//                           <div key={child.label} className="relative group/sub">
+//                             <Link
+//                               to={child.href}
+//                               className="flex items-center justify-between px-5 py-3 text-xs font-bold uppercase tracking-wider text-gray-600 hover:bg-blue-50 hover:text-[#0077FF]"
+//                             >
+//                               {child.label}
+//                               {child.children && <ChevronRight className="w-4 h-4" />}
+//                             </Link>
+
+//                             {child.children && (
+//                               <div className="absolute left-full top-0 pl-1 w-64 hidden group-hover/sub:block">
+//                                 <div className="bg-white border border-gray-200 shadow-xl rounded-xl py-3 ml-1">
+//                                   {child.children.map((subChild) => (
+//                                     <Link
+//                                       key={subChild.label}
+//                                       to={subChild.href}
+//                                       className="block px-5 py-3 text-xs font-bold uppercase tracking-wider text-gray-600 hover:bg-blue-50 hover:text-[#0077FF]"
+//                                     >
+//                                       {subChild.label}
+//                                     </Link>
+//                                   ))}
+//                                 </div>
+//                               </div>
+//                             )}
+//                           </div>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   )}
+//                 </div>
+//               ))}
+
+//               {/* Language selector remains 'notranslate' so language names don't change */}
+//               <div className="ml-4 relative notranslate">
+//                 <select
+//                   value={lang}
+//                   onChange={(e) => changeLanguage(e.target.value)}
+//                   className="appearance-none border border-gray-400 bg-white text-[#0A2540] text-sm px-3 pr-8 py-1.5 rounded cursor-pointer w-[150px] h-[34px] focus:outline-none hover:border-red-600"
+//                 >
+//                   {languages.map(l => (
+//                     <option key={l.code} value={l.code}>{l.label}</option>
+//                   ))}
+//                 </select>
+//                 <ChevronDown size={16} className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-gray-600" />
+//               </div>
+//             </div>
+
+//             <div className="md:hidden">
+//               <button onClick={() => setIsOpen(!isOpen)} className="text-[#0A2540]">
+//                 {isOpen ? <X size={26} /> : <Menu size={26} />}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+
+//       <style>{`
+//         .goog-te-banner-frame.skiptranslate { display:none !important; }
+//         body { top:0px !important; position: static !important; }
+//         .goog-tooltip { display:none !important; }
+//         .goog-text-highlight { background:none !important; box-shadow:none !important; }
+//         #google_translate_element { display: none !important; }
+//       `}</style>
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import { NAV_ITEMS } from "../constants";
 
 const languages = [
-  { code: 'en', label: 'English' },
-  { code: 'hi', label: 'Hindi' },
-  { code: 'bn', label: 'Bengali' },
-  { code: 'mr', label: 'Marathi' },
-  { code: 'ta', label: 'Tamil' },
-  { code: 'te', label: 'Telugu' },
-  { code: 'gu', label: 'Gujarati' },
-  { code: 'kn', label: 'Kannada' },
-  { code: 'pa', label: 'Punjabi' },
-  { code: 'ur', label: 'Urdu' },
-  { code: 'fr', label: 'French' },
-  { code: 'de', label: 'German' },
-  { code: 'es', label: 'Spanish' },
-  { code: 'ar', label: 'Arabic' },
-  { code: 'ru', label: 'Russian' },
-  { code: 'zh-CN', label: 'Chinese' },
-  { code: 'ja', label: 'Japanese' },
-  { code: 'pt', label: 'Portuguese' },
+  { code: "en", label: "English" },
+  { code: "hi", label: "Hindi" },
+  { code: "bn", label: "Bengali" },
+  { code: "mr", label: "Marathi" },
+  { code: "ta", label: "Tamil" },
+  { code: "te", label: "Telugu" },
+  { code: "gu", label: "Gujarati" },
+  { code: "kn", label: "Kannada" },
+  { code: "pa", label: "Punjabi" },
+  { code: "ur", label: "Urdu" },
+  { code: "fr", label: "French" },
+  { code: "de", label: "German" },
+  { code: "es", label: "Spanish" },
+  { code: "ar", label: "Arabic" },
+  { code: "ru", label: "Russian" },
+  { code: "zh-CN", label: "Chinese" },
+  { code: "ja", label: "Japanese" },
+  { code: "pt", label: "Portuguese" }
 ];
 
 const Navbar: React.FC = () => {
-  const [lang, setLang] = useState('en');
+
+  const location = useLocation();
+
+  const [lang, setLang] = useState(localStorage.getItem("site_lang") || "en");
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const location = useLocation();
 
-  // Close menus on route change
-  useEffect(() => {
-    setIsOpen(false);
-    setActiveDropdown(null);
-  }, [location.pathname]);
+  // 🔥 mobile level tracking
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+  const [mobileSubDropdown, setMobileSubDropdown] = useState<string | null>(null);
 
+  /* scroll */
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Initialize Google Translate
+  /* close on route change */
   useEffect(() => {
-    const id = "googleTranslateScript";
-    if (!document.getElementById(id)) {
-      const script = document.createElement("script");
-      script.id = id;
-      script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-      script.async = true;
-      document.body.appendChild(script);
-      
+    setIsOpen(false);
+    setMobileDropdown(null);
+    setMobileSubDropdown(null);
+  }, [location.pathname]);
+
+  /* GOOGLE INIT */
+  useEffect(() => {
+
+    // @ts-ignore
+    window.googleTranslateElementInit = () => {
       // @ts-ignore
-      window.googleTranslateElementInit = () => {
-        // @ts-ignore
-        new window.google.translate.TranslateElement(
-          { pageLanguage: "en", autoDisplay: false },
-          "google_translate_element"
-        );
-      };
-    }
+      new window.google.translate.TranslateElement(
+        { pageLanguage: "en", autoDisplay: false },
+        "google_translate_element"
+      );
+    };
+
+    const script = document.createElement("script");
+    script.src =
+      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => document.body.removeChild(script);
+
   }, []);
 
-  const changeLanguage = (value: string) => {
-    setLang(value);
-    
-    // 1. Set the cookie (Google Translate reads this)
-    document.cookie = `googtrans=/en/${value}; path=/`;
-    document.cookie = `googtrans=/en/${value}; domain=${window.location.hostname}; path=/`;
-
-    // 2. Update the hidden Google select box
+  /* APPLY LANGUAGE */
+  useEffect(() => {
     const apply = () => {
-      const select = document.querySelector(".goog-te-combo") as HTMLSelectElement;
-      if (select) {
-        select.value = value;
-        select.dispatchEvent(new Event("change"));
-      } else {
-        setTimeout(apply, 500);
-      }
+      const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement;
+      if (combo) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event("change"));
+      } else setTimeout(apply, 400);
     };
     apply();
+  }, [lang]);
 
-    // 3. Optional: Refresh to ensure translation kicks in
-    // window.location.reload(); 
+  const changeLanguage = (value:string)=>{
+    setLang(value);
+    localStorage.setItem("site_lang", value);
   };
 
   return (
     <>
-      <div id="google_translate_element" style={{ display: 'none' }} />
+      <div id="google_translate_element" style={{position:"absolute", left:"-9999px"}} />
 
-      {/* REMOVED 'notranslate' from the main nav so text can change */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || isOpen
-          ? 'bg-[#E6F2FF]/95 backdrop-blur-md border-b border-blue-100 py-3 shadow-sm'
-          : 'bg-[#E6F2FF] py-6'
+          ? "bg-[#E6F2FF]/95 backdrop-blur-md border-b border-blue-100 py-3 shadow-sm"
+          : "bg-[#E6F2FF] py-6"
       }`}>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* TOP */}
           <div className="flex justify-between items-center">
-            
-            <Link to="/" className="group notranslate">
-              <div className="h-12 w-12 md:h-16 md:w-16 bg-white rounded-full border-2 border-red-600 shadow-lg overflow-hidden flex items-center justify-center">
-                <img src="/uploads/logoo.png" className="h-full w-full object-contain scale-110 p-1" alt="Logo" />
+
+            {/* LOGO */}
+            <Link to="/" className="notranslate">
+              <div className="h-12 w-12 md:h-16 md:w-16 bg-white rounded-full border-2 border-red-600 shadow-lg flex items-center justify-center overflow-hidden">
+                <img src="/uploads/logoo.png" className="h-full w-full object-contain p-1"/>
               </div>
             </Link>
 
+            {/* DESKTOP */}
             <div className="hidden md:flex items-center space-x-1">
-              {NAV_ITEMS.map((item) => (
+
+              {NAV_ITEMS.map(item => (
                 <div
                   key={item.label}
-                  className="relative group"
-                  onMouseEnter={() => setActiveDropdown(item.label)}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  className="relative"
+                  onMouseEnter={()=>setActiveDropdown(item.label)}
+                  onMouseLeave={()=>setActiveDropdown(null)}
                 >
+
                   <Link
-                    to={item.href === '#' ? location.pathname : item.href}
-                    className={`flex items-center px-4 py-2 text-[13px] font-bold uppercase tracking-wider transition-colors ${
-                      location.pathname === item.href ? 'text-[#0077FF]' : 'text-[#0A2540] hover:text-[#0077FF]'
-                    }`}
+                    to={item.href === "#" ? location.pathname : item.href}
+                    className="flex items-center px-4 py-2 text-[13px] font-bold uppercase text-[#0A2540] hover:text-[#0077FF]"
                   >
                     {item.label}
-                    {item.children && <ChevronDown className="ml-1 w-3 h-3" />}
+                    {item.children && <ChevronDown className="ml-1 w-3 h-3"/>}
                   </Link>
 
                   {item.children && activeDropdown === item.label && (
-                    <div className="absolute top-full left-0 pt-2 w-64">
-                      <div className="bg-white border border-gray-200 shadow-xl rounded-xl py-3 mt-1">
-                        {item.children.map((child) => (
-                          <div key={child.label} className="relative group/sub">
+                    <div className="absolute top-full left-0 pt-2 w-64 z-50">
+                      <div className="bg-white border shadow-xl rounded-xl py-2">
+
+                        {item.children.map(child => (
+                          <div key={child.label} className="relative group">
+
                             <Link
                               to={child.href}
-                              className="flex items-center justify-between px-5 py-3 text-xs font-bold uppercase tracking-wider text-gray-600 hover:bg-blue-50 hover:text-[#0077FF]"
+                              className="flex justify-between px-5 py-3 text-xs font-bold uppercase text-gray-700 hover:bg-blue-50 hover:text-[#0077FF]"
                             >
                               {child.label}
-                              {child.children && <ChevronRight className="w-4 h-4" />}
+                              {child.children && <ChevronRight size={14}/>}
                             </Link>
 
                             {child.children && (
-                              <div className="absolute left-full top-0 pl-1 w-64 hidden group-hover/sub:block">
-                                <div className="bg-white border border-gray-200 shadow-xl rounded-xl py-3 ml-1">
-                                  {child.children.map((subChild) => (
+                              <div className="absolute left-full top-0 hidden group-hover:block w-64 pl-1">
+                                <div className="bg-white border shadow-xl rounded-xl py-2">
+
+                                  {child.children.map(sub => (
                                     <Link
-                                      key={subChild.label}
-                                      to={subChild.href}
-                                      className="block px-5 py-3 text-xs font-bold uppercase tracking-wider text-gray-600 hover:bg-blue-50 hover:text-[#0077FF]"
+                                      key={sub.label}
+                                      to={sub.href}
+                                      className="block px-5 py-3 text-xs font-bold uppercase text-gray-700 hover:bg-blue-50 hover:text-[#0077FF]"
                                     >
-                                      {subChild.label}
+                                      {sub.label}
                                     </Link>
                                   ))}
+
                                 </div>
                               </div>
                             )}
+
                           </div>
                         ))}
+
                       </div>
                     </div>
                   )}
+
                 </div>
               ))}
 
-              {/* Language selector remains 'notranslate' so language names don't change */}
-              <div className="ml-4 relative notranslate">
+              {/* LANGUAGE */}
+              <select
+                value={lang}
+                onChange={e=>changeLanguage(e.target.value)}
+                className="ml-4 border border-gray-400 bg-white text-sm px-3 py-1.5 rounded w-[150px] notranslate"
+              >
+                {languages.map(l=>(
+                  <option key={l.code} value={l.code}>{l.label}</option>
+                ))}
+              </select>
+
+            </div>
+
+            {/* MOBILE BUTTON */}
+            <div className="md:hidden">
+              <button onClick={()=>setIsOpen(!isOpen)}>
+                {isOpen ? <X size={26}/> : <Menu size={26}/>}
+              </button>
+            </div>
+
+          </div>
+
+          {/* MOBILE MENU */}
+          {isOpen && (
+            <div className="md:hidden mt-4 bg-white rounded-2xl shadow-lg border overflow-hidden">
+
+              {NAV_ITEMS.map(item => (
+                <div key={item.label} className="border-b last:border-none">
+
+                  {/* LEVEL 1 */}
+                  <div className="flex items-center justify-between px-5 py-4">
+
+                    <Link
+                      to={item.href === "#" ? location.pathname : item.href}
+                      onClick={()=>setIsOpen(false)}
+                      className="font-bold text-[#0A2540] flex-1"
+                    >
+                      {item.label}
+                    </Link>
+
+                    {item.children && (
+                      <button onClick={()=>{
+                        setMobileDropdown(
+                          mobileDropdown===item.label?null:item.label
+                        );
+                        setMobileSubDropdown(null);
+                      }}>
+                        <ChevronDown className={`transition ${
+                          mobileDropdown===item.label?"rotate-180":""
+                        }`}/>
+                      </button>
+                    )}
+
+                  </div>
+
+                  {/* LEVEL 2 */}
+                  {item.children && mobileDropdown===item.label && (
+                    <div className="bg-gray-50">
+
+                      {item.children.map(child=>(
+                        <div key={child.label} className="border-t">
+
+                          <div className="flex items-center justify-between px-8 py-3">
+
+                            <Link
+                              to={child.href}
+                              onClick={()=>setIsOpen(false)}
+                              className="text-sm flex-1"
+                            >
+                              {child.label}
+                            </Link>
+
+                            {child.children && (
+                              <button onClick={()=>{
+                                setMobileSubDropdown(
+                                  mobileSubDropdown===child.label?null:child.label
+                                );
+                              }}>
+                                <ChevronDown size={16}
+                                  className={`transition ${
+                                    mobileSubDropdown===child.label?"rotate-180":""
+                                  }`}
+                                />
+                              </button>
+                            )}
+
+                          </div>
+
+                          {/* LEVEL 3 (HYGIENE ITEMS) */}
+                          {child.children && mobileSubDropdown===child.label && (
+                            <div className="bg-gray-100">
+                              {child.children.map(sub=>(
+                                <Link
+                                  key={sub.label}
+                                  to={sub.href}
+                                  onClick={()=>setIsOpen(false)}
+                                  className="block px-12 py-3 border-t text-sm"
+                                >
+                                  {sub.label}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+
+                        </div>
+                      ))}
+
+                    </div>
+                  )}
+
+                </div>
+              ))}
+
+              {/* MOBILE LANGUAGE */}
+              <div className="p-4">
                 <select
                   value={lang}
-                  onChange={(e) => changeLanguage(e.target.value)}
-                  className="appearance-none border border-gray-400 bg-white text-[#0A2540] text-sm px-3 pr-8 py-1.5 rounded cursor-pointer w-[150px] h-[34px] focus:outline-none hover:border-red-600"
+                  onChange={e=>changeLanguage(e.target.value)}
+                  className="w-full border border-gray-400 bg-white text-sm px-3 py-2 rounded notranslate"
                 >
-                  {languages.map(l => (
+                  {languages.map(l=>(
                     <option key={l.code} value={l.code}>{l.label}</option>
                   ))}
                 </select>
-                <ChevronDown size={16} className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-gray-600" />
               </div>
-            </div>
 
-            <div className="md:hidden">
-              <button onClick={() => setIsOpen(!isOpen)} className="text-[#0A2540]">
-                {isOpen ? <X size={26} /> : <Menu size={26} />}
-              </button>
             </div>
-          </div>
+          )}
+
         </div>
       </nav>
 
       <style>{`
         .goog-te-banner-frame.skiptranslate { display:none !important; }
-        body { top:0px !important; position: static !important; }
-        .goog-tooltip { display:none !important; }
-        .goog-text-highlight { background:none !important; box-shadow:none !important; }
-        #google_translate_element { display: none !important; }
+        body { top:0px !important; }
       `}</style>
     </>
   );
