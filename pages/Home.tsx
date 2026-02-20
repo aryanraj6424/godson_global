@@ -349,7 +349,7 @@ const Home: React.FC = () => {
     </div>
 
     {/* STATS */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
       <div className="bg-white rounded-2xl p-10 shadow">
         <div className="text-5xl font-serif text-[#050C1A] mb-2">20+</div>
@@ -372,7 +372,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-    </div>
+    </div> */}
 
   </div>
 </section>
