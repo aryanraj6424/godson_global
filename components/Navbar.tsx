@@ -854,7 +854,7 @@ const Navbar: React.FC = () => {
 
   const location = useLocation();
 
-  const [lang, setLang] = useState(localStorage.getItem("site_lang") || "en");
+  const [lang, setLang] = useState("en");
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -902,15 +902,17 @@ const Navbar: React.FC = () => {
 
   /* APPLY LANGUAGE */
   useEffect(() => {
-    const apply = () => {
-      const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement;
-      if (combo) {
-        combo.value = lang;
-        combo.dispatchEvent(new Event("change"));
-      } else setTimeout(apply, 400);
-    };
-    apply();
-  }, [lang]);
+  if(lang === "en") return;   // 🔥 English pe kuch mat karo
+
+  const apply = () => {
+    const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement;
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event("change"));
+    } else setTimeout(apply, 400);
+  };
+  apply();
+}, [lang]);
 
   const changeLanguage = (value:string)=>{
     setLang(value);
@@ -923,8 +925,8 @@ const Navbar: React.FC = () => {
 
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || isOpen
-          ? "bg-[#E6F2FF]/95 backdrop-blur-md border-b border-blue-100 py-3 shadow-sm"
-          : "bg-[#E6F2FF] py-6"
+  ? "bg-[#1A2E3D]/95 backdrop-blur-md border-b border-blue-100 py-3 shadow-sm"
+  : "bg-[#1A2E3D] py-6"
       }`}>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -952,7 +954,7 @@ const Navbar: React.FC = () => {
 
                   <Link
                     to={item.href === "#" ? location.pathname : item.href}
-                    className="flex items-center px-4 py-2 text-[13px] font-bold uppercase text-[#0A2540] hover:text-[#0077FF]"
+                    className="flex items-center px-4 py-2 text-[13px] font-bold uppercase text-white hover:text-gray-200"
                   >
                     {item.label}
                     {item.children && <ChevronDown className="ml-1 w-3 h-3"/>}

@@ -392,7 +392,7 @@ const ProductDetail: React.FC = () => {
             
             <div className="order-1 lg:order-2">
               <span className="text-[#26BAA4] font-black tracking-[0.3em] uppercase text-sm mb-4 block">Product Insights</span>
-              <h2 className="text-5xl font-serif text-gray-900 mb-8 leading-tight">Product Overview</h2>
+              <h2 className="text-5xl font-serif text-gray-900 mb-8 leading-tight">Product Details</h2>
               <p className="text-gray-500 text-xl leading-relaxed mb-10">{product.fullDescription}</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -412,7 +412,7 @@ const ProductDetail: React.FC = () => {
       <section className="py-24 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif text-gray-900 tracking-tight">Technical Specifications</h2>
+            <h2 className="text-4xl font-serif text-gray-900 tracking-tight">Product Specifications</h2>
             <div className="w-24 h-1 bg-[#26BAA4] mx-auto mt-6"></div>
           </div>
           
@@ -441,7 +441,7 @@ const ProductDetail: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif text-gray-900">Premium Product Features</h2>
+            <h2 className="text-4xl font-serif text-gray-900">Product Features</h2>
             <p className="text-[#26BAA4] font-medium mt-2 italic tracking-wide">Excellence in every detail</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

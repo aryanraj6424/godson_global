@@ -40,10 +40,40 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
   'baby-diaper': {
     id: 'baby-diaper',
     heroHeading: (
-      <>
-        <span style={{ color: 'darkred' }}>Baby Diaper</span>{' '} <br />
-        <span style={{ color: '#ff4d4d', fontSize: '0.9em' }}>(HSN CODE: 96190040)</span>
-      </>),
+  <div style={{ 
+  textAlign: 'left',
+   lineHeight: 1.1 ,
+   marginLeft: '8%',     // 👈 LEFT shift control
+      maxWidth: '600px'
+   }}>
+    
+    <div
+      style={{
+        color: '#7A0C0C',
+        fontWeight: 700,
+        letterSpacing: '2px',
+        textTransform: 'uppercase',
+        fontSize: 'clamp(32px, 4vw, 64px)',   // 👈 responsive single-line desktop
+        whiteSpace: 'nowrap'
+      }}
+    >
+      BABY DIAPER
+    </div>
+
+    <div
+      style={{
+        marginTop: '12px',
+        color: '#ff6b6b',
+        fontSize: 'clamp(14px, 1.2vw, 22px)',
+        fontWeight: 500,
+        letterSpacing: '1px'
+      }}
+    >
+      (HSN CODE: 96190040)
+    </div>
+
+  </div>
+),
     name: 'Godson Baby Diapers',
     category: 'Hygiene Product',
     description: 'Specially designed to provide superior comfort, dryness, and protection for babies at every stage.',
@@ -61,44 +91,76 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
       { icon: 'Smile', title: 'Skin-Friendly Comfort', desc: 'Soft materials for delicate baby skin' },
       { icon: 'Wind', title: 'Odor Control', desc: 'Advanced technology to keep baby fresh' },
       { icon: 'Moon', title: 'Day & Night Protection', desc: 'Perfect for long naps and nighttime' },
-      { icon: 'Zap', title: 'Easy Wear & Change', desc: 'Hassle-free design for busy parents' },
-      { icon: 'Users', title: 'Full Size Range', desc: 'Suitable from newborns to toddlers' }
     ],
     technicalSpecs: [
-      { label: 'ADL Sheet', value: 'Acquisition Distribution Layer for dryness' },
-      { label: 'Absorbent Core', value: 'SAP (Super Absorbent Polymer)' },
-      { label: 'Sizes Available', value: 'NB, S, M, L, XL' },
-      { label: 'Style', value: 'Soft Elastic Pant Style' },
-      { label: 'Wetness Indicator', value: 'Yes, for usage guidance' },
-      { label: 'Waistband', value: '360° stretch stretchable design' }
+      { label: 'Size', value: 'NB, S, M, L, XL' },
+      { label: 'Product Style', value: 'Pant Style' },
+      { label: 'Top Sheet', value: 'Non - Woven Polypropylene' },
+      { label: 'Back Sheet', value: 'Non - Woven Polypropylene Polyethylene' },
+      { label: 'Absorbent Pad', value: 'Paper, Pulp and Polymer' },
+      { label: 'Elastic', value: 'Polyurethane' },
+      {label:'Construction', value: 'Hot Melt Adhesive'},
+      {label:'SAP', value: 'Available'},
+      {label:'Wetness Indicator', value: 'Optional'},
     ],
     availableTypes: [
       { title: 'Pant Style (Pull-Up)', desc: 'Easy to wear pull-up design ideal for active babies with a snug comfortable fit.', icon: 'Zap' }
     ],
     logistics: [
-      'Hygienically sealed for freshness and quality',
       'Inner Packaging: As per buyers requirement',
       'Outer Packaging: 10 packets per BOPP / Sack bag',
-      'Durable, export-ready packaging for safe handling',
       'MOQ: 20ft/40ft Container capacity'
     ]
   },
   'adult-diaper': {
     id: 'adult-diaper',
     heroHeading: (
-      <>
-        <span style={{ color: 'darkred' }}>Adult Diaper</span>{' '} <br />
-        <span style={{ color: '#ff4d4d', fontSize: '0.9em' }}>(HSN CODE: 96190040)</span>
-      </>),
+  <div
+
+  
+    style={{
+      textAlign: 'left',
+      lineHeight: 1.1,
+      maxWidth: '650px'
+    }}
+  >
+
+    {/* FIRST LINE */}
+    <div
+      style={{
+        color: '#7A0C0C',
+        fontWeight: 700,
+        letterSpacing: '2px',
+        textTransform: 'uppercase',
+        fontSize: 'clamp(32px, 4vw, 64px)',   // 👈 responsive single-line desktop
+        whiteSpace: 'nowrap'                  // 👈 force one line on desktop
+      }}
+    >
+      Adult DIAPER
+    </div>
+
+    {/* SECOND LINE */}
+    <div
+      style={{
+        marginTop: '12px',
+        color: '#ff6b6b',
+        fontSize: 'clamp(14px, 1.2vw, 22px)', // 👈 responsive size
+        fontWeight: 500,
+        letterSpacing: '1px'
+      }}
+    >
+      (HSN CODE: 96190040)
+    </div>
+
+  </div>
+),
     name: 'Godson Adult Diapers',
     category: 'Hygiene Product',
     description: 'Designed to deliver superior comfort, protection, and dignity for daily personal care needs.',
     fullDescription: 'Our adult diapers are manufactured using advanced technology and high-quality materials. They offer excellent absorbency, reliable leakage control, and skin-friendly softness. Suitable for both active users and assisted care environments, these diapers are trusted by international buyers for healthcare, retail, and private-label distribution.',
     image: '/uploads/adult1.png',
     sliderImages: [
-      'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1586773860418-d37222d8fce2?q=80&w=2000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2000&auto=format&fit=crop'
+      '/uploads/adultbanner1.png'
     ],
     features: [],
     featuresList: [
@@ -106,46 +168,78 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
       { icon: 'ShieldCheck', title: 'Leak-Secure Fit', desc: 'Standing leak guards for maximum protection' },
       { icon: 'Cloud', title: 'Ultra-Soft & Breathable', desc: 'Skin-friendly comfort for delicate skin' },
       { icon: 'Wind', title: 'Odor Control', desc: 'Advanced technology to neutralize odors' },
-      { icon: 'Heart', title: 'Dignity & Protection', desc: 'Discreet fit feels like real underwear' },
-      { icon: 'Activity', title: 'Active & Assisted Use', desc: 'Suitable for mobile and bedridden care' },
-      { icon: 'Zap', title: 'Easy Wear & Change', desc: 'Tear-away sides for quick disposal' },
-      { icon: 'Layout', title: 'Optimal Design', desc: 'Ergonomic pant style design for maximum comfort' }
+      { icon: 'Heart', title: 'Dignity and Protection', desc: 'Discreet fit feels like real underwear' },
+      { icon: 'Activity', title: 'Active and Assisted Use', desc: 'Suitable for mobile and bedridden care' },
     ],
     technicalSpecs: [
-      { label: 'ADL Sheet', value: 'Acquisition Distribution Layer for liquid spread' },
-      { label: 'Absorbent Material', value: 'SAP (Super Absorbent Polymer) Gel Core' },
-      { label: 'Wetness Indicator', value: 'Color-change line for usage guidance' },
-      { label: 'Sizes Available', value: 'M, L, XL, XXL' },
-      { label: 'Waistband', value: 'Coloured waistband highlights the front' },
-      { label: 'Style Details', value: 'Waistband elasticity and stretchability for movement' }
+      { label: 'Size', value: 'M, L, XL, XXL' },
+      { label: 'Product Style', value: 'Pant Style' },
+      { label: 'Top Sheet', value: 'Non – Woven Polypropylene' },
+      { label: 'Back Sheet', value: 'Non – Woven Polypropylene Polyethylene ' },
+      { label: 'Absorbent Pad', value: 'Paper, Pulp and Polymer' },
+      { label: 'Elastic', value: 'Polyurethane' },
+      {label: 'Construction', value: 'Hot Melt Adhesive '},
+      {label: 'SAP', value: 'Available'},
+      {label: 'Wetness Indicator', value: 'Available'},
     ],
     availableTypes: [
       { title: 'Pant Style (Pull-Up)', desc: 'Contours to your body for a comfortable fit like real underwear.', icon: 'Zap' }
     ],
     logistics: [
       'Inner Packaging: 10 diapers per packet',
-      'Hygienically sealed for freshness and quality',
       'Outer Packaging: 10 packets per BOPP / Sack bag',
-      'Durable export-ready packaging for safe handling',
       'Container Capacity: One 40ft container ≈ 14,000 bags'
     ]
   },
   'underpads': {
     id: 'underpads',
     heroHeading: (
-      <>
-        <span style={{ color: 'darkred' }}>Adult Diaper</span>{' '} <br />
-        <span style={{ color: '#ff4d4d', fontSize: '0.9em' }}>(HSN CODE: 96190090)</span>
-      </>),
+  <div
+
+  
+    style={{
+      textAlign: 'left',
+      lineHeight: 1.1,
+      maxWidth: '650px'
+    }}
+  >
+
+    {/* FIRST LINE */}
+    <div
+      style={{
+        color: '#7A0C0C',
+        fontWeight: 700,
+        letterSpacing: '2px',
+        textTransform: 'uppercase',
+        fontSize: 'clamp(32px, 4vw, 64px)',   // 👈 responsive single-line desktop
+        whiteSpace: 'nowrap'                  // 👈 force one line on desktop
+      }}
+    >
+      Under Pads
+    </div>
+
+    {/* SECOND LINE */}
+    <div
+      style={{
+        marginTop: '12px',
+        color: '#ff6b6b',
+        fontSize: 'clamp(14px, 1.2vw, 22px)', // 👈 responsive size
+        fontWeight: 500,
+        letterSpacing: '1px'
+      }}
+    >
+      (HSN CODE: 96190090)
+    </div>
+
+  </div>
+),
     name: 'Godson Protective Underpads',
     category: 'Hygiene Product',
     description: 'Highly absorbent pads designed to protect surfaces like beds, chairs, and furniture from fluid damage.',
     fullDescription: 'Godson Global Underpads are highly absorbent pads designed to protect surfaces like beds, chairs, and furniture from fluid damage and moisture. They feature a multi-layered construction: a soft, non-woven top sheet for comfort, a high-performance absorbent core with SAP technology to lock in fluids, and a waterproof backing to prevent leakage. Essential for maintaining hygiene in medical, geriatric, domestic, and pet care settings.',
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1000&auto=format&fit=crop',
+    image: '/uploads/underpads11.png',
     sliderImages: [
-      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=2000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2000&auto=format&fit=crop'
+      '/uploads/underpadsbanner.png',
     ],
     features: [],
     featuresList: [
@@ -155,28 +249,21 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
       { icon: 'Shield', title: 'Waterproof PE Backing', desc: '100% moisture-proof and leak-proof Polyethylene backing' },
       { icon: 'Wind', title: 'Odor Control', desc: 'Engineered for home hygiene and neutralizing odors' },
       { icon: 'Zap', title: 'Quick-Dry Technology', desc: 'Rapid fluid absorption keeping the surface dry' },
-      { icon: 'Activity', title: 'Versatile Protection', desc: 'Ideal for incontinence, post-operative care, and pet training' },
-      { icon: 'CheckCircle2', title: 'Surface Guard', desc: 'Superior protection for beds, chairs, and all furniture' }
     ],
     technicalSpecs: [
-      { label: 'Construction', value: '5-Layer Leak Protection System' },
-      { label: 'Adult Care Size', value: '60 x 90 cm' },
-      { label: 'Pet Care Size', value: '60 x 45 cm (with Adhesive)' },
-      { label: 'Pet Care Size (Standard)', value: '60 x 60 cm' },
-      { label: 'Core Material', value: 'SAP (Super Absorbent Polymer) & Wood Fluff' },
-      { label: 'Backing Material', value: 'Moisture-Proof Polyethylene (PE)' }
+      { label: 'Size', value: '60*90 cm' },
+      { label: 'Top Sheet', value: 'Non – Woven' },
+      { label: 'Back Sheet', value: 'Moisture Proof Polyethylene (PE)' },
+      { label: 'SAP', value: 'Available' },
     ],
     availableTypes: [
       { title: 'Adult Underpads', desc: 'Ideal for incontinence management, post-operative care, and hospital environments.', icon: 'Stethoscope' },
       { title: 'Pet Underpads', desc: 'Perfect for house-training puppies or providing comfort for senior pets while keeping floors clean.', icon: 'Dog' }
     ],
     logistics: [
-      'Primary (Adult): 10 underpads per pack, hygienically sealed',
-      'Primary (Pet): 20-50 units per pack (size-dependent)',
-      'Secondary (Adult): 20 packs per carton/sack bag',
-      'Secondary (Pet): 20 packs per sack bag',
-      'Standard Load: 40ft container capacity',
-      'Customization: Tailored packaging and loading options available'
+      'Inner Packaging : 10 under pads per packet',
+      'Outer Packaging : 20 packets per carton / Sack bag',
+      'MOQ: 20ft/40ft Container capacity',
     ]
   },
   'soya-meal': {

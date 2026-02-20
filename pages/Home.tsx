@@ -477,7 +477,7 @@ const Home: React.FC = () => {
 
         {[
           {icon: Phone, title:"Phone", value:"+91 93545 03193"},
-          {icon: MapPin, title:"Location", value:"Grandslam Ithum Tower, Tower A, Sector 62, Noida, 201309, UP"},
+          {icon: MapPin, title:"Location", value:"B-1131 Tower B, ITHUM TOWER 11th floor, Plot no. A 40, Sector 62, Noida Uttar Pradesh - 201309, India"},
           {icon: Mail, title:"Email", value:"abhayraj.godson@gmail.com  |  richa.godson@gmail.com"},
           {icon: Clock, title:"Business Hours (IST)", value:"Mon – Sat: 9:00 AM – 6:00 PM | Sunday Closed"},
         ].map((item,i)=>(
