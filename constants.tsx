@@ -64,7 +64,7 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
       style={{
         marginTop: '12px',
         color: '#ff6b6b',
-        fontSize: 'clamp(14px, 1.2vw, 22px)',
+        fontSize: 'clamp(18px, 1.8vw, 30px)',
         fontWeight: 500,
         letterSpacing: '1px'
       }}
@@ -144,7 +144,7 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
       style={{
         marginTop: '12px',
         color: '#ff6b6b',
-        fontSize: 'clamp(14px, 1.2vw, 22px)', // 👈 responsive size
+        fontSize: 'clamp(18px, 1.8vw, 30px)', // 👈 responsive size
         fontWeight: 500,
         letterSpacing: '1px'
       }}
@@ -223,12 +223,12 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
       style={{
         marginTop: '12px',
         color: '#ff6b6b',
-        fontSize: 'clamp(14px, 1.2vw, 22px)', // 👈 responsive size
+        fontSize: 'clamp(18px, 1.8vw, 30px)', // 👈 responsive size
         fontWeight: 500,
         letterSpacing: '1px'
       }}
     >
-      (HSN CODE: 96190090)
+      <h1>(HSN CODE: 96190090)</h1>
     </div>
 
   </div>

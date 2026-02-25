@@ -395,14 +395,14 @@ const ProductDetail: React.FC = () => {
               <h2 className="text-5xl font-serif text-gray-900 mb-8 leading-tight">Product Details</h2>
               <p className="text-gray-500 text-xl leading-relaxed mb-10">{product.fullDescription}</p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {product.featuresList.slice(0, 6).map((f, i) => (
                   <div key={i} className="flex items-center space-x-3 p-4 bg-[#F0F9FF] rounded-xl border border-blue-50">
                     <CheckCircle2 className="w-5 h-5 text-[#26BAA4] shrink-0" />
                     <span className="font-bold text-gray-700 text-sm uppercase tracking-wide">{f.title}</span>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -438,7 +438,7 @@ const ProductDetail: React.FC = () => {
       </section>
 
       {/* 4. PRODUCT FEATURES (Card Layout) */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif text-gray-900">Product Features</h2>
@@ -456,7 +456,65 @@ const ProductDetail: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* 4. PRODUCT FEATURES (Table + Grid Responsive) */}
+<section className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
+    
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-serif text-gray-900">Product Features</h2>
+      <p className="text-[#26BAA4] font-medium mt-2 italic tracking-wide">
+        Excellence in every detail
+      </p>
+    </div>
+
+    {/* ✅ DESKTOP TABLE */}
+    <div className="hidden md:block overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
+      <table className="w-full text-left bg-white">
+        <thead>
+          <tr className="bg-[#26BAA4] text-white">
+            <th className="p-6 font-bold uppercase tracking-widest text-sm">Feature</th>
+            <th className="p-6 font-bold uppercase tracking-widest text-sm">Description</th>
+          </tr>
+        </thead>
+
+        <tbody className="divide-y divide-gray-100">
+          {product.featuresList.map((f, i) => (
+            <tr key={i} className="hover:bg-[#F0F9FF] transition-colors">
+              <td className="p-6 font-bold text-gray-900 italic w-1/3">
+                {f.title}
+              </td>
+              <td className="p-6 text-gray-600">
+                {f.desc}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    {/* ✅ MOBILE GRID */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:hidden">
+      {product.featuresList.map((f, i) => (
+        <div
+          key={i}
+          className="bg-[#F0F9FF]/40 p-8 rounded-2xl border border-blue-100 
+          hover:bg-white hover:shadow-xl hover:-translate-y-2 
+          transition-all duration-300"
+        >
+          <h3 className="text-lg font-bold text-gray-900 mb-3">
+            {f.title}
+          </h3>
+          <p className="text-gray-500 text-sm leading-relaxed">
+            {f.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
 
       {/* 5. PACKAGING & LOGISTICS (Grid) */}
       <section className="py-24 bg-[#F0F9FF]">
