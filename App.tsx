@@ -34,7 +34,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             {/* Direct nested routes for clarity */}
             <Route path="/Soyameal" element={<Soyameal />} />
-            <Route path="/Raisins" element={<Raisins />} />
+            
             <Route path="/product/hygiene/:productId" element={<ProductDetail />} />
             <Route path="/product/:productId" element={<ProductDetail />} />
             {/* <Route path="/certificate" element={<Certificate />} /> */}
