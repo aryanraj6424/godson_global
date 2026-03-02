@@ -17,8 +17,8 @@ export const NAV_ITEMS: NavItem[] = [
           { label: 'Underpads', href: '/product/hygiene/underpads' },
         ],
       },
-      { label: 'Soya Meal', href: '#' },
-      { label: 'Raisin', href: '#' },
+      { label: 'Soya Meal', href: '/Soyameal' },
+      { label: 'Raisin', href: 'Raisins' },
     ],
   },
   // { label: 'Certificates', href: '/certificate' },
@@ -266,46 +266,46 @@ export const PRODUCTS: Record<string, ExtendedProduct> = {
       'MOQ: 20ft/40ft Container capacity',
     ]
   },
-  'soya-meal': {
-    id: 'soya-meal',
-    heroHeading: 'Soya Meal',
-    name: 'High-Protein Soya Meal',
-    category: 'Agricultural',
-    description: 'Premium quality soybean meal sourced from top producers, ideal for livestock feed.',
-    fullDescription: 'Our soya meal is processed to maintain maximum nutritional value, providing an essential protein source for various livestock applications.',
-    image: 'https://images.unsplash.com/photo-1594754407856-12c8b746c268?q=80&w=1000&auto=format&fit=crop',
-    sliderImages: ['https://images.unsplash.com/photo-1594754407856-12c8b746c268?q=80&w=2000&auto=format&fit=crop'],
-    features: [],
-    featuresList: [
-      { icon: 'ShieldCheck', title: 'Non-GMO Options', desc: 'Sourced from strictly verified crops' },
-      { icon: 'Zap', title: 'High Digestibility', desc: 'Optimized for efficient livestock growth' }
-    ],
-    technicalSpecs: [
-      { label: 'Protein Content', value: 'High protein profile' },
-      { label: 'Digestibility', value: 'Rich in Amino Acids' }
-    ],
-    logistics: ['Bulk packaging available', 'Global logistics support'],
-    availableTypes: []
-  },
-  'raisin': {
-    id: 'raisin',
-    heroHeading: 'Premium Raisins',
-    name: 'Golden & Black Raisins',
-    category: 'Dried Fruits',
-    description: 'Sun-dried premium raisins packed with natural sweetness and nutrients.',
-    fullDescription: 'Hand-picked and processed under strict hygiene standards to ensure a high-quality product for food manufacturers and retail alike.',
-    image: 'https://images.unsplash.com/photo-1595436021424-7388cd53c7a7?q=80&w=1000&auto=format&fit=crop',
-    sliderImages: ['https://images.unsplash.com/photo-1595436021424-7388cd53c7a7?q=80&w=2000&auto=format&fit=crop'],
-    features: [],
-    featuresList: [
-      { icon: 'Sun', title: '100% Natural', desc: 'Sun-dried for natural sweetness' },
-      { icon: 'ShieldCheck', title: 'A-Grade Quality', desc: 'Carefully sorted for size and texture' }
-    ],
-    technicalSpecs: [
-      { label: 'Type', value: 'Golden & Black variants' },
-      { label: 'Shelf Life', value: 'Extended shelf life' }
-    ],
-    logistics: ['Safe transportation', 'Standardized packing sizes'],
-    availableTypes: []
-  }
+  // 'soya-meal': {
+  //   id: 'soya-meal',
+  //   heroHeading: 'Soya Meal',
+  //   name: 'High-Protein Soya Meal',
+  //   category: 'Agricultural',
+  //   description: 'Premium quality soybean meal sourced from top producers, ideal for livestock feed.',
+  //   fullDescription: 'Our soya meal is processed to maintain maximum nutritional value, providing an essential protein source for various livestock applications.',
+  //   image: 'https://images.unsplash.com/photo-1594754407856-12c8b746c268?q=80&w=1000&auto=format&fit=crop',
+  //   sliderImages: ['https://images.unsplash.com/photo-1594754407856-12c8b746c268?q=80&w=2000&auto=format&fit=crop'],
+  //   features: [],
+  //   featuresList: [
+  //     { icon: 'ShieldCheck', title: 'Non-GMO Options', desc: 'Sourced from strictly verified crops' },
+  //     { icon: 'Zap', title: 'High Digestibility', desc: 'Optimized for efficient livestock growth' }
+  //   ],
+  //   technicalSpecs: [
+  //     { label: 'Protein Content', value: 'High protein profile' },
+  //     { label: 'Digestibility', value: 'Rich in Amino Acids' }
+  //   ],
+  //   logistics: ['Bulk packaging available', 'Global logistics support'],
+  //   availableTypes: []
+  // },
+  // 'raisin': {
+  //   id: 'raisin',
+  //   heroHeading: 'Premium Raisins',
+  //   name: 'Golden & Black Raisins',
+  //   category: 'Dried Fruits',
+  //   description: 'Sun-dried premium raisins packed with natural sweetness and nutrients.',
+  //   fullDescription: 'Hand-picked and processed under strict hygiene standards to ensure a high-quality product for food manufacturers and retail alike.',
+  //   image: 'https://images.unsplash.com/photo-1595436021424-7388cd53c7a7?q=80&w=1000&auto=format&fit=crop',
+  //   sliderImages: ['https://images.unsplash.com/photo-1595436021424-7388cd53c7a7?q=80&w=2000&auto=format&fit=crop'],
+  //   features: [],
+  //   featuresList: [
+  //     { icon: 'Sun', title: '100% Natural', desc: 'Sun-dried for natural sweetness' },
+  //     { icon: 'ShieldCheck', title: 'A-Grade Quality', desc: 'Carefully sorted for size and texture' }
+  //   ],
+  //   technicalSpecs: [
+  //     { label: 'Type', value: 'Golden & Black variants' },
+  //     { label: 'Shelf Life', value: 'Extended shelf life' }
+  //   ],
+  //   logistics: ['Safe transportation', 'Standardized packing sizes'],
+  //   availableTypes: [] }
+  
 };

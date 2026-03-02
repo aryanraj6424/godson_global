@@ -10,6 +10,8 @@ import ProductDetail from './pages/ProductDetail';
 import Certificate from './pages/Certificate';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import Soyameal from './pages/Soyameal';
+import Raisins from './pages/Raisins';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -31,6 +33,8 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             {/* Direct nested routes for clarity */}
+            <Route path="/Soyameal" element={<Soyameal />} />
+            <Route path="/Raisins" element={<Raisins />} />
             <Route path="/product/hygiene/:productId" element={<ProductDetail />} />
             <Route path="/product/:productId" element={<ProductDetail />} />
             {/* <Route path="/certificate" element={<Certificate />} /> */}
