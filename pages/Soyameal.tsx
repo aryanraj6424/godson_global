@@ -698,7 +698,7 @@
 
 import React, { useRef } from 'react';
 import { Send, Phone, ChevronDown } from 'lucide-react';
-
+import { Box } from 'lucide-react'; 
 // --- DATA SECTION ---
 const SOYA_SECTIONS = [
   {
@@ -917,11 +917,11 @@ const Soyameal: React.FC = () => {
       </section>
 
       {/* 3. PACKAGING SECTION */}
-      <section style={{ backgroundColor: '#fcfcfc' }} className="py-20 border-y border-gray-100">
+      {/* <section style={{ backgroundColor: '#fcfcfc' }} className="py-20 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-sm border border-gray-100 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-10 uppercase tracking-tighter">Packaging <span style={{ color: brandTeal }}>& Logistics</span></h2>
+              <h2 className="text-4xl font-bold text-black mb-10 uppercase tracking-tighter">Packaging <span style={{ color: brandTeal }}>& Logistics</span></h2>
               <div className="grid grid-cols-1 gap-4">
                 {[
                   { t: "Packaging Type", v: "Strong PP Bags" },
@@ -942,7 +942,65 @@ const Soyameal: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+       <section style={{ backgroundColor: '#f3f7fa' }} className="py-20 border-y border-gray-100">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-sm border border-gray-100 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 className="text-5xl font-black text-black mb-12 uppercase tracking-tighter">
+          Packaging <span style={{ color: brandTeal }}>& Logistics</span>
+        </h2>
+        
+        <div className="grid grid-cols-1 gap-6">
+          {[
+            { t: "Packaging Type", v: "Strong PP Bags" },
+            { t: "Standard Size", v: "50 Kg Packing" },
+            { t: "Min Order Qty", v: "20ft / 40ft Container" }
+          ].map((item, i) => (
+            <div 
+              key={i} 
+              className="group flex items-center justify-between p-6 bg-white rounded-[1.5rem] shadow-md border-l-[6px] transition-all hover:shadow-lg" 
+              style={{ borderLeftColor: brandTeal }}
+            >
+              <div className="flex items-center gap-5">
+                {/* Icon Box with subtle brand color background */}
+                <div 
+                  className="w-12 h-12 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: `${brandTeal}15` }}
+                >
+                  <Box size={22} style={{ color: brandTeal }} />
+                </div>
+                
+                {/* Label: Gray-500 ko Black kar diya hai */}
+                <span className="font-bold text-black uppercase text-xs tracking-widest">
+                  {item.t}
+                </span>
+              </div>
+
+              {/* Value: Ye pehle se Black tha, ab thoda aur bada (base) kiya hai */}
+              <span className="font-black text-black text-sm md:text-base text-right">
+                {item.v}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative group">
+        <div 
+          style={{ backgroundColor: brandTeal }} 
+          className="absolute inset-0 rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity"
+        ></div>
+        <img 
+          src="/soyamealimg/soya9.png" 
+          alt="Soya Packaging" 
+          className="relative rounded-[2.5rem] shadow-2xl w-full object-cover transform transition-transform hover:scale-[1.02]" 
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* 4. CONTACT FOOTER */}
       <section ref={contactRef} className="py-24 bg-white">
