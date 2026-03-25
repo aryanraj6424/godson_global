@@ -1,459 +1,285 @@
-// import React from 'react';
-
-// const RAISIN_DATA = [
-//   {
-//     id: 1,
-//     category: "Premium Indian Raisins",
-//     items: [
-//       {
-//         name: "GOLDEN & GREEN RAISINS",
-//         desc: "Seedless varieties include the sultana, traditionally sun-dried for natural sweetness. These are high in potassium and copper.",
-//         image: "/uploads/image_423089.jpg", // Banner style image
-//         varieties: ["Golden Round", "Golden Long", "Green Round", "Green Long"],
-//         specs: [
-//           { label: "Carbohydrates", value: "79% (4% Fiber)" },
-//           { label: "Water Content", value: "15%" },
-//           { label: "Protein", value: "3%" },
-//           { label: "Energy", value: "299 kcal per 100g" }
-//         ]
-//       },
-//       {
-//         name: "BLACK & BROWN RAISINS",
-//         desc: "Jumbo Black and Brown raisins are sun-dried to maintain their rich antioxidants and natural minerals.",
-//         image: "/uploads/image_422da1.jpg",
-//         varieties: ["Jumbo Black Raisins", "Brown Raisins"],
-//         specs: [
-//           { label: "Nutrients", value: "Rich in Riboflavin & Vitamin B6" },
-//           { label: "Minerals", value: "Potassium, Copper, Iron" }
-//         ]
-//       },
-//       {
-//         name: "MALAYAR VARIETIES",
-//         desc: "Premium quality Malayar raisins sorted by grades (A, AA, AAA) and size (B Long).",
-//         image: "/uploads/image_422d7f.jpg",
-//         varieties: ["Malayar A", "Malayar AA", "Malayar AAA", "Malayar B Long"]
-//       }
-//     ]
-//   }
-// ];
-
-// const Raisins: React.FC = () => {
-//   return (
-//     <div className="min-h-screen bg-white pb-20">
-//       {/* Hero Section */}
-//       <section className="relative h-[400px] bg-yellow-900 flex items-center justify-center overflow-hidden">
-//         <img src="/uploads/image_423089.jpg" className="absolute inset-0 w-full h-full object-cover opacity-50" alt="Raisins" />
-//         <h1 className="relative text-5xl font-bold text-white uppercase tracking-widest text-center px-4">
-//           Premium Quality Raisins
-//         </h1>
-//       </section>
-
-//       {/* --- ADDED TEXT SECTION --- */}
-//       <section className="bg-yellow-50 py-12 border-b border-yellow-100">
-//         <div className="max-w-5xl mx-auto px-4 text-center">
-//           <p className="text-lg md:text-xl text-yellow-900 leading-relaxed italic font-medium">
-//             "Raisin varieties depend on the type of grape used and are made in a variety of sizes and colors including green, black, brown, and golden. Seedless varieties include the sultana, the Greek currants Flame grapes. Raisins are traditionally sun-dried, but may also be water-dipped and artificially dehydrated."
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* Content Section */}
-//       <div className="max-w-7xl mx-auto px-4 mt-12">
-//         {RAISIN_DATA.map((section) => (
-//           <div key={section.id}>
-//             <h2 className="text-3xl font-bold border-b-4 border-yellow-500 inline-block mb-10 pb-2">{section.category}</h2>
-//             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//               {section.items.map((item, idx) => (
-//                 <div key={idx} className="border rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
-//                   <div className="h-56 overflow-hidden">
-//                     <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-//                   </div>
-//                   <div className="p-6">
-//                     <h3 className="text-xl font-bold text-yellow-800 mb-3">{item.name}</h3>
-//                     <p className="text-gray-600 text-sm mb-4 leading-relaxed">{item.desc}</p>
-                    
-//                     {item.varieties && (
-//                       <div className="mb-4">
-//                         <span className="text-xs font-bold uppercase text-gray-400 tracking-wider">Available Types:</span>
-//                         <div className="flex flex-wrap gap-2 mt-2">
-//                           {item.varieties.map(v => (
-//                             <span key={v} className="bg-yellow-50 text-yellow-700 text-xs px-2 py-1 rounded border border-yellow-200">{v}</span>
-//                           ))}
-//                         </div>
-//                       </div>
-//                     )}
-
-//                     {item.specs && (
-//                       <div className="bg-gray-50 p-4 rounded-lg">
-//                         <h4 className="text-sm font-bold mb-2">Nutritional Value:</h4>
-//                         {item.specs.map(s => (
-//                           <div key={s.label} className="flex justify-between text-xs py-1 border-b border-gray-200 last:border-0">
-//                             <span className="text-gray-500">{s.label}</span>
-//                             <span className="font-semibold">{s.value}</span>
-//                           </div>
-//                         ))}
-//                       </div>
-//                     )}
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Raisins;
 
 
+import React, { useRef } from 'react';
+import { Send, Phone, ChevronDown, Box } from 'lucide-react';
 
-// import React from 'react';
-
-// const RAISIN_DATA = [
-//   {
-//     id: 1,
-//     category: "Premium Indian Raisins",
-//     items: [
-//       {
-//         name: "GOLDEN & GREEN RAISINS",
-//         desc: "Seedless varieties include the sultana, traditionally sun-dried for natural sweetness. These are high in potassium and copper.",
-//         image: "/uploads/image_423089.jpg", 
-//         varieties: ["Golden Round", "Golden Long", "Green Round", "Green Long"],
-//         specs: [
-//           { label: "Carbohydrates", value: "79% (4% Fiber)" },
-//           { label: "Water Content", value: "15%" },
-//           { label: "Protein", value: "3%" },
-//           { label: "Energy", value: "299 kcal per 100g" }
-//         ]
-//       },
-//       {
-//         name: "BLACK & BROWN RAISINS",
-//         desc: "Jumbo Black and Brown raisins are sun-dried to maintain their rich antioxidants and natural minerals.",
-//         image: "/uploads/image_422da1.jpg",
-//         varieties: ["Jumbo Black Raisins", "Brown Raisins"],
-//         specs: [
-//           { label: "Nutrients", value: "Rich in Riboflavin & Vitamin B6" },
-//           { label: "Minerals", value: "Potassium, Copper, Iron" }
-//         ]
-//       },
-//       {
-//         name: "MALAYAR VARIETIES",
-//         desc: "Premium quality Malayar raisins sorted by grades (A, AA, AAA) and size (B Long).",
-//         image: "/uploads/image_422d7f.jpg",
-//         varieties: ["Malayar A", "Malayar AA", "Malayar AAA", "Malayar B Long"]
-//       }
-//     ]
-//   }
-// ];
-
-// // Gallery Images Array (Total 8 images)
-// const GALLERY_IMAGES = [
-//   "/rasins/rai1.png", "/rasins/rai2.png", // Row 1 (2 images)
-//   "/rasins/rai3.png", "/rasins/rai4.png", // Row 2 (2 images)
-//   "/rasins/rai5.png", "/rasins/rai6.png", // Row 3 (2 images)
-//   "/rasins/rai7.png", "/rasins/rai8.png", "/rasins/rai9.png", "/rasins/rai10.png" // Row 4 (4 images)
-// ];
-
-// const Raisins: React.FC = () => {
-//   return (
-//     <div className="min-h-screen bg-white pb-20 font-sans">
-      
-//       {/* 1. HERO BANNER SECTION */}
-//       <section className="relative h-[450px] bg-[#4a3728] flex items-center justify-center overflow-hidden">
-//         <img 
-//           src="/uploads/image_423089.jpg" 
-//           className="absolute inset-0 w-full h-full object-cover opacity-40" 
-//           alt="Raisins Banner" 
-//         />
-//         <div className="relative z-10 text-center px-4">
-//           <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-2">
-//             Premium Raisins
-//           </h1>
-//           <div className="h-1 w-32 bg-yellow-500 mx-auto"></div>
-//         </div>
-//       </section>
-
-//       {/* 2. DESCRIPTION TEXT SECTION */}
-//       <section className="bg-white pt-16 pb-8 px-4">
-//         <div className="max-w-4xl mx-auto text-center">
-//           <p className="text-xl md:text-2xl text-gray-700 leading-relaxed italic font-light">
-//             "Raisin varieties depend on the type of grape used and are made in a variety of sizes and colors including green, black, brown, and golden. Seedless varieties include the sultana, the Greek currants Flame grapes. Raisins are traditionally sun-dried, but may also be water-dipped and artificially dehydrated."
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* 3. NUTRITION VALUE TABLE (Added before Types) */}
-//       <section className="max-w-4xl mx-auto px-4 mb-16">
-//         <div className="bg-white border-2 border-yellow-100 rounded-2xl overflow-hidden shadow-sm">
-//           <div className="bg-yellow-500 py-3 px-6">
-//             <h3 className="text-white font-bold uppercase tracking-widest text-center">Nutritional Value (Per 100g)</h3>
-//           </div>
-//           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y divide-yellow-100">
-//              {[
-//                {l: "Energy", v: "299 kcal"}, {l: "Protein", v: "3.1g"}, 
-//                {l: "Carbs", v: "79.2g"}, {l: "Fiber", v: "3.7g"},
-//                {l: "Sugar", v: "59g"}, {l: "Potassium", v: "749mg"},
-//                {l: "Iron", v: "1.9mg"}, {l: "Vitamin B6", v: "0.2mg"}
-//              ].map((n, i) => (
-//                <div key={i} className="p-4 text-center">
-//                  <p className="text-[10px] uppercase text-gray-400 font-bold mb-1">{n.l}</p>
-//                  <p className="text-lg font-bold text-gray-800">{n.v}</p>
-//                </div>
-//              ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* 4. TYPES HIGHLIGHT SECTION (Design kept same) */}
-//       <section className="bg-yellow-50 py-10">
-//         <div className="max-w-7xl mx-auto px-4">
-//           <h2 className="text-center text-3xl font-bold text-yellow-900 uppercase tracking-widest mb-8">
-//               Available Raisin Types
-//           </h2>
-//           <div className="flex flex-wrap justify-center gap-4">
-//             {["Green", "Black", "Golden", "Brown", "Malayar", "Sultana"].map((type) => (
-//               <span key={type} className="px-6 py-2 bg-white border-2 border-yellow-500 text-yellow-900 font-bold rounded-full shadow-sm">
-//                 {type}
-//               </span>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* 5. 8-IMAGE GALLERY SECTION (Row 1-3: 2 images, Row 4: 4 images) */}
-//       <section className="max-w-7xl mx-auto px-4 py-16">
-//         <div className="space-y-4">
-//           {/* Row 1, 2, 3 (2 images each) */}
-//           <div className="grid grid-cols-2 gap-4">
-//             {GALLERY_IMAGES.slice(0, 6).map((img, i) => (
-//               <div key={i} className="h-64 md:h-80 overflow-hidden rounded-xl shadow-lg">
-//                 <img src={img} className="w-full h-full object-cover hover:scale-105 transition-duration-500" alt="Raisin View" />
-//               </div>
-//             ))}
-//           </div>
-//           {/* Row 4 (4 images) */}
-//           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-//             {GALLERY_IMAGES.slice(6, 10).map((img, i) => (
-//               <div key={i} className="h-48 overflow-hidden rounded-xl shadow-lg">
-//                 <img src={img} className="w-full h-full object-cover hover:scale-105 transition-duration-500" alt="Raisin View" />
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* 6. PHOTOS WITH NAME SECTION (Product Cards) */}
-//       {/* <div className="max-w-7xl mx-auto px-4 mt-10">
-//         {RAISIN_DATA.map((section) => (
-//           <div key={section.id}>
-//             <div className="flex items-center gap-4 mb-12">
-//                <h2 className="text-4xl font-black text-gray-900 uppercase">{section.category}</h2>
-//                <div className="flex-grow h-[2px] bg-gray-200"></div>
-//             </div>
-
-//             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-//               {section.items.map((item, idx) => (
-//                 <div key={idx} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300">
-//                   <div className="h-64 overflow-hidden relative">
-//                     <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-//                     <div className="absolute top-4 left-4">
-//                        <span className="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Premium</span>
-//                     </div>
-//                   </div>
-
-//                   <div className="p-8">
-//                     <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-yellow-600 transition-colors">{item.name}</h3>
-//                     <p className="text-gray-600 text-sm mb-6 leading-relaxed">{item.desc}</p>
-                    
-//                     {item.varieties && (
-//                       <div className="mb-6">
-//                         <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">Varieties</p>
-//                         <div className="flex flex-wrap gap-2">
-//                           {item.varieties.map(v => (
-//                             <span key={v} className="bg-gray-50 text-gray-700 text-[10px] font-bold px-2 py-1 rounded border border-gray-200">{v}</span>
-//                           ))}
-//                         </div>
-//                       </div>
-//                     )}
-
-//                     {item.specs && (
-//                       <div className="bg-yellow-50/50 p-5 rounded-xl border border-yellow-100">
-//                         <p className="text-xs font-black text-yellow-800 uppercase tracking-widest mb-3">Analysis</p>
-//                         {item.specs.map(s => (
-//                           <div key={s.label} className="flex justify-between text-xs py-1.5 border-b border-yellow-100 last:border-0">
-//                             <span className="text-yellow-700/70 font-medium">{s.label}</span>
-//                             <span className="text-yellow-900 font-bold">{s.value}</span>
-//                           </div>
-//                         ))}
-//                       </div>
-//                     )}
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         ))}
-//       </div> */}
-//     </div>
-//   );
-// };
-
-// export default Raisins;
-
-
-
-
-import React from 'react';
-
+// --- DATA SECTION ---
 const RAISIN_DATA = [
   {
     id: 1,
-    category: "Premium Indian Raisins",
+    category: "Indian Raisins",
     items: [
       {
         name: "GOLDEN & GREEN RAISINS",
-        desc: "Seedless varieties include the sultana, traditionally sun-dried for natural sweetness.",
-        image: "/uploads/image_423089.jpg", 
-        varieties: ["Golden Round", "Golden Long", "Green Round", "Green Long"],
+        desc: "Seedless varieties include the sultana, traditionally sun-dried for natural sweetness. These raisins are processed to maintain their vibrant color and succulent texture, perfect for confectionery and snacking.",
+        image: "/rasins/GreenRoundRaisins.png", 
+        hsn: "08062010",
         specs: [
-          { label: "Carbohydrates", value: "79%" },
-          { label: "Energy", value: "299 kcal" }
+          { label: "Carbohydrates", value: "79% (4% Fiber)" },
+          { label: "Energy", value: "299 kcal" },
+          { label: "Protein", value: "3%" },
+          { label: "Varieties", value: "Golden Round/Long, Green Round/Long" }
         ]
       },
       {
         name: "BLACK & BROWN RAISINS",
-        desc: "Jumbo Black and Brown raisins are sun-dried to maintain rich antioxidants.",
-        image: "/uploads/image_422da1.jpg",
-        varieties: ["Jumbo Black", "Brown Raisins"],
+        desc: "Jumbo Black and Brown raisins are sun-dried to maintain rich antioxidants. Known for their deep flavor and health benefits, these are widely used in dry fruit mixes and medicinal formulations.",
+        image: "/rasins/brownRasins.png",
+        hsn: "08062010",
         specs: [
-          { label: "Nutrients", value: "Vitamin B6" },
-          { label: "Iron", value: "1.9mg" }
+          { label: "Vitamin B6", value: "10-19% DV" },
+          { label: "Minerals", value: "Rich in Potassium & Copper" },
+          { label: "Type", value: "Jumbo Black / Brown" },
+          { label: "Standard", value: "Sun-Dried / Seedless" }
         ]
       },
       {
         name: "MALAYAR VARIETIES",
-        desc: "Premium quality Malayar raisins sorted by grades (A, AA, AAA).",
-        image: "/uploads/image_422d7f.jpg",
-        varieties: ["Malayar A", "Malayar AAA"]
+        desc: "Malayar raisins sorted by strict grades. These raisins are sought after for their consistent size, uniform color, and balanced sweetness, making them a global export favorite.",
+        image: "/rasins/malayar AAA.png",
+        hsn: "08062010",
+        specs: [
+          { label: "Grades", value: "Grade A, Grade AA, Grade AAA" },
+          { label: "Special Grade", value: "Malayar B Long" },
+          { label: "Water Content", value: "15% Average" },
+          { label: "Cleaning", value: "Machine Cleaned" }
+        ]
       }
     ]
   }
 ];
 
 const GALLERY_IMAGES = [
-  "/rasins/rai1.png", "/rasins/rai2.png", "/rasins/rai3.png", 
-  "/rasins/rai4.png", "/rasins/rai5.png", "/rasins/rai6.png", 
-  "/rasins/rai7.png", "/rasins/rai8.png", "/rasins/rai9.png", "/rasins/rai10.png"
+  "/rasins/goldLongRaisins.png", "/rasins/goldRoundRasins.png", "/rasins/GreenLongRaisins.png", 
+  "/rasins/GreenRoundRaisins.png", "/rasins/brownRasins.png", "/rasins/jumboBlackRaisins.png", 
+  "/rasins/malayar A.png", "/rasins/malayar AA.png", "/rasins/malayar AAA.png", "/rasins/Malayar b long rasins.png"
 ];
 
 const Raisins: React.FC = () => {
+  const brandTeal = "#00A99D"; 
+  const themeRed = "#7A0C0C"; 
+
+  const contactRef = useRef<HTMLElement>(null);
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen bg-white pb-20 font-sans">
+    <div className="min-h-screen bg-white font-sans text-gray-800">
       
-      {/* 1. HERO BANNER */}
-      <section className="relative h-[450px] bg-[#4a3728] flex items-center justify-center overflow-hidden">
-        <img src="/uploads/image_423089.jpg" className="absolute inset-0 w-full h-full object-cover opacity-40" alt="Banner" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-2">Premium Raisins</h1>
-          <div className="h-1 w-32 bg-yellow-500 mx-auto"></div>
-        </div>
-      </section>
+      {/* 1. HERO SECTION */}
+      <section className="relative h-[100vh] w-full overflow-hidden bg-[#f8fafc] flex items-center">
+  {/* Yahan image as a background implement hai */}
+  <div className="absolute inset-0 z-0">
+    <img 
+      src="/rasins/raisinsBanner.png" 
+      className="w-full h-full object-cover opacity-60" 
+      alt="Raisins Banner" 
+    />
+  </div>
+  
+  <div className="relative z-10 w-full px-[8%]">
+    <div className="max-w-4xl">
+      <h1 style={{ color: themeRed, lineHeight: 1.1 }} className="font-black text-6xl md:text-8xl uppercase tracking-tighter drop-shadow-sm">
+        INDIAN RAISINS
+      </h1>
+      <p style={{ color: brandTeal }} className="mt-4 text-xl md:text-2xl font-bold uppercase tracking-wider">
+        HSN Code : 08062010
+      </p>
+      <button 
+        onClick={scrollToContact}
+        style={{ backgroundColor: brandTeal }}
+        className="mt-10 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all flex items-center shadow-2xl cursor-pointer"
+      >
+        Request Quote <ChevronDown className="ml-3 animate-bounce" />
+      </button>
+    </div>
+  </div>
+</section>
 
-      {/* 2. DESCRIPTION */}
-      <section className="bg-white pt-16 pb-8 px-4 text-center max-w-4xl mx-auto">
-        <p className="text-xl md:text-2xl text-gray-700 leading-relaxed italic font-light">
-          "Raisin varieties depend on the type of grape used and are made in a variety of sizes and colors including green, black, brown, and golden. Seedless varieties include the sultana, the Greek currants Flame grapes. Raisins are traditionally sun-dried, but may also be water-dipped and artificially dehydrated."
-        </p>
-      </section>
-
-      {/* 3. NUTRITION TABLE */}
-      <section className="max-w-4xl mx-auto px-4 mb-16">
-        <div className="bg-white border-2 border-yellow-100 rounded-2xl overflow-hidden shadow-sm">
-          <div className="bg-yellow-500 py-3 text-center text-white font-bold uppercase tracking-widest">Nutritional Value (Per 100g)</div>
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y divide-yellow-100">
-             {[{l: "Energy", v: "299 kcal"}, {l: "Protein", v: "3.1g"}, {l: "Carbs", v: "79.2g"}, {l: "Fiber", v: "3.7g"}].map((n, i) => (
-               <div key={i} className="p-4 text-center">
-                 <p className="text-[10px] uppercase text-gray-400 font-bold mb-1">{n.l}</p>
-                 <p className="text-lg font-bold text-gray-800">{n.v}</p>
-               </div>
-             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. TYPES SECTION */}
-      <section className="bg-yellow-50 py-10">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-center text-3xl font-bold text-yellow-900 uppercase tracking-widest mb-8">Available Raisin Types</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {["Green", "Black", "Golden", "Brown", "Malayar", "Sultana"].map((type) => (
-              <span key={type} className="px-6 py-2 bg-white border-2 border-yellow-500 text-yellow-900 font-bold rounded-full">{type}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. GALLERY SECTION (3-3-4 Layout) */}
-      <section className="max-w-7xl mx-auto px-4 py-16 space-y-4">
-        {/* Rows with 3 images each (First 6 images) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {GALLERY_IMAGES.slice(0, 6).map((img, i) => (
-            <div key={i} className="aspect-square w-full overflow-hidden rounded-xl shadow-md border border-gray-100">
-              <img src={img} className="w-full h-full object-cover" alt="Gallery View" />
+      {/* 2. NUTRITIONAL HIGHLIGHTS SECTION (New based on image 1) */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-black uppercase mb-6" style={{ color: themeRed }}>Nutritional Value</h2>
+              <p className="text-lg text-gray-700 leading-relaxed italic">
+                "Raisins are 15% water, 79% carbohydrates (including 4% fiber), and 3% protein. In a reference amount of 100 grams, raisins supply 299 kilocalories and significant amounts of riboflavin, vitamin B6, potassium, and copper."
+              </p>
             </div>
-          ))}
-        </div>
-
-        {/* Row with 4 images (Last 4 images) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {GALLERY_IMAGES.slice(6, 10).map((img, i) => (
-            <div key={i} className="aspect-square w-full overflow-hidden rounded-xl shadow-md border border-gray-100">
-              <img src={img} className="w-full h-full object-cover" alt="Gallery View" />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 6. PRODUCT CARDS */}
-      {/* <div className="max-w-7xl mx-auto px-4 mt-10">
-        {RAISIN_DATA.map((section) => (
-          <div key={section.id}>
-            <div className="flex items-center gap-4 mb-12">
-               <h2 className="text-4xl font-black text-gray-900 uppercase">{section.category}</h2>
-               <div className="flex-grow h-[2px] bg-gray-200"></div>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-10">
-              {section.items.map((item, idx) => (
-                <div key={idx} className="group w-full max-w-[400px] bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xl">
-                  <div className="aspect-square w-full overflow-hidden relative">
-                    <img 
-                      src={item.image} 
-                      alt={item.name} 
-                      className="w-full h-full object-cover" 
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6">
-                       <h3 className="text-xl font-bold text-white uppercase leading-tight">{item.name}</h3>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-600 text-sm line-clamp-2 mb-4">{item.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {item.varieties?.map(v => (
-                        <span key={v} className="bg-yellow-50 text-yellow-700 text-[10px] font-bold px-2 py-1 rounded border border-yellow-200">
-                          {v}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { label: "Carbs", val: "79%" },
+                { label: "Water", val: "15%" },
+                { label: "Protein", val: "3%" },
+                { label: "Energy", val: "299 kcal" }
+              ].map((stat, i) => (
+                <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border-b-4" style={{ borderBottomColor: brandTeal }}>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{stat.label}</p>
+                  <p className="text-2xl font-black text-gray-900">{stat.val}</p>
                 </div>
               ))}
             </div>
           </div>
-        ))}
-      </div> */}
+        </div>
+      </section>
+
+      {/* 3. PRODUCTS SECTION */}
+      <section className="pt-24 pb-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          {RAISIN_DATA.map((section) => (
+            <div key={section.id} className="mb-24">
+              <div className="flex items-center gap-4 mb-16">
+                <div style={{ backgroundColor: brandTeal }} className="h-1.5 w-24"></div>
+                <h2 className="text-4xl font-bold text-gray-900 uppercase tracking-tight">{section.category}</h2>
+              </div>
+
+              <div className="space-y-32">
+                {section.items.map((item, idx) => (
+                  <div key={idx} className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+                    
+                    {/* Image Column */}
+                    <div className={`relative ${idx % 2 !== 0 ? 'lg:order-2' : ''}`}>
+                      <div style={{ backgroundColor: brandTeal }} className="absolute -inset-4 rounded-[2rem] blur-3xl opacity-10"></div>
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        className="relative rounded-3xl shadow-2xl w-full h-[450px] object-cover bg-gray-50 border border-gray-100 p-2" 
+                      />
+                    </div>
+
+                    {/* Content Column */}
+                    <div className={idx % 2 !== 0 ? 'lg:order-1' : ''}>
+                      <span style={{ color: brandTeal }} className="font-black tracking-[0.3em] uppercase text-xs mb-3 block">Indian Varieties</span>
+                      <h3 className="text-3xl font-extrabold text-gray-900 mb-4 leading-tight uppercase">{item.name}</h3>
+                      
+                      <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base bg-gray-50 p-5 rounded-r-2xl border-l-4" style={{ borderLeftColor: brandTeal }}>
+                        {item.desc}
+                      </p>
+
+                      <p className="text-gray-400 italic text-[12px] font-bold mb-4">HSN Code: {item.hsn}</p>
+                      
+                      {/* Specs Table */}
+                      <div className="rounded-2xl border-2 border-gray-100 overflow-hidden shadow-lg">
+                        <table className="w-full text-left text-sm">
+                          <thead>
+                            <tr style={{ backgroundColor: brandTeal }} className="text-white uppercase tracking-widest text-[10px]">
+                              <th className="p-3 font-bold border-b border-black/10">Analysis Parameter</th>
+                              <th className="p-3 font-bold border-b border-black/10">Standard Value</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-100">
+                            {item.specs.map((spec, sIdx) => (
+                              <tr key={sIdx} className="hover:bg-teal-50/50 transition-colors">
+                                <td className="p-3 font-bold text-gray-700 bg-gray-50/30 uppercase text-[10px] tracking-wider">{spec.label}</td>
+                                <td className="p-3 text-gray-600 font-medium">{spec.value}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. GALLERY SECTION */}
+      <section style={{ backgroundColor: '#f8fafc' }} className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black uppercase tracking-tighter italic">Product <span style={{ color: brandTeal }}>Showcase</span></h2>
+            <div style={{ backgroundColor: themeRed }} className="h-1 w-20 mx-auto mt-4"></div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {GALLERY_IMAGES.slice(0, 6).map((img, i) => (
+                <div key={i} className="aspect-square w-full overflow-hidden rounded-3xl shadow-lg group">
+                  <img src={img} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" alt="Raisin Detail" />
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {GALLERY_IMAGES.slice(6, 10).map((img, i) => (
+                <div key={i} className="aspect-square w-full overflow-hidden rounded-3xl shadow-lg group">
+                  <img src={img} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" alt="Raisin Detail" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. PACKAGING & SHIPMENT (Updated based on image 2) */}
+      <section style={{ backgroundColor: '#fff' }} className="py-20 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-[#f3f7fa] rounded-[3rem] p-8 md:p-16 shadow-sm border border-gray-100 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-5xl font-black text-black mb-12 uppercase tracking-tighter">
+                Logistics <span style={{ color: brandTeal }}>& Shipment</span>
+              </h2>
+              <div className="grid grid-cols-1 gap-6">
+                {[
+                  { t: "Packaging", v: "Bulk - 10KG Corrugated Box" },
+                  { t: "1 * 20FCL Capacity", v: "20 MT" },
+                  { t: "1 * 40FCL Capacity", v: "28 MT" }
+                ].map((item, i) => (
+                  <div 
+                    key={i} 
+                    className="group flex items-center justify-between p-6 bg-white rounded-[1.5rem] shadow-md border-l-[6px] transition-all hover:shadow-lg" 
+                    style={{ borderLeftColor: brandTeal }}
+                  >
+                    <div className="flex items-center gap-5">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${brandTeal}15` }}>
+                        <Box size={22} style={{ color: brandTeal }} />
+                      </div>
+                      <span className="font-bold text-black uppercase text-xs tracking-widest">{item.t}</span>
+                    </div>
+                    <span className="font-black text-black text-sm md:text-base text-right">{item.v}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative group">
+               <div style={{ backgroundColor: brandTeal }} className="absolute inset-0 rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+               <img src="/rasins/soya9.png" alt="Packaging" className="relative rounded-[2.5rem] shadow-2xl w-full h-[400px] object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. CONTACT FOOTER */}
+      <section ref={contactRef} className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div style={{ backgroundColor: brandTeal }} className="rounded-[4rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+              <div className="text-white text-center lg:text-left">
+                <h2 className="text-5xl font-black mb-6 leading-none uppercase tracking-tighter">Get Best <br/> Export Rates</h2>
+                <div className="flex items-center justify-center lg:justify-start space-x-4 mt-8">
+                   <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center border border-white/20"><Phone size={20} /></div>
+                   <span className="text-xl font-bold">+91-93545 03193</span>
+                </div>
+              </div>
+              <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl">
+                <div className="space-y-4">
+                  <input type="text" placeholder="Company Name" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-5 focus:ring-2 focus:ring-[#00A99D] outline-none font-medium" />
+                  <textarea rows={3} placeholder="Raisin Variety & Quantity (MT)" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-5 focus:ring-2 focus:ring-[#00A99D] outline-none font-medium"></textarea>
+                  <button style={{ backgroundColor: '#111' }} className="w-full text-white font-black uppercase py-5 rounded-2xl flex items-center justify-center hover:scale-[1.02] transition-transform">
+                    Request Quote <Send className="ml-3 w-5 h-5 text-[#00A99D]" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

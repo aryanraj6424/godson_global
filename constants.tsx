@@ -18,7 +18,7 @@ export const NAV_ITEMS: NavItem[] = [
         ],
       },
       { label: 'Soya Meal', href: '/Soyameal' },
-      { label: 'Raisin', href: '#' },
+      { label: 'Raisin', href: '/Raisins' },
     ],
   },
   // { label: 'Certificates', href: '/certificate' },
