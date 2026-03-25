@@ -1,5 +1,3 @@
-
-
 import React, { useRef } from 'react';
 import { Send, Phone, ChevronDown, Box } from 'lucide-react';
 
@@ -79,8 +77,9 @@ const Raisins: React.FC = () => {
   </div>
   
   <div className="relative z-10 w-full px-[8%]">
-    <div className="max-w-4xl">
+    <div className="max-w-4xl"> <br /> <br />
       <h1 style={{ color: themeRed, lineHeight: 1.1 }} className="font-black text-6xl md:text-8xl uppercase tracking-tighter drop-shadow-sm">
+        <br /> 
         INDIAN RAISINS
       </h1>
       <p style={{ color: brandTeal }} className="mt-4 text-xl md:text-2xl font-bold uppercase tracking-wider">
