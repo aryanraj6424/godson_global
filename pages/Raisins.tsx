@@ -254,30 +254,31 @@ const Raisins: React.FC = () => {
 
       {/* 6. CONTACT FOOTER */}
       <section ref={contactRef} className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div style={{ backgroundColor: brandTeal }} className="rounded-[4rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-              <div className="text-white text-center lg:text-left">
-                <h2 className="text-5xl font-black mb-6 leading-none uppercase tracking-tighter">Get Best <br/> Export Rates</h2>
-                <div className="flex items-center justify-center lg:justify-start space-x-4 mt-8">
-                   <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center border border-white/20"><Phone size={20} /></div>
-                   <span className="text-xl font-bold">+91-93545 03193</span>
+              <div className="max-w-7xl mx-auto px-6">
+                <div style={{ backgroundColor: brandTeal }} className="rounded-[4rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
+                  <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                    <div className="text-white text-center lg:text-left">
+                      <h2 className="text-5xl font-black mb-6 leading-none uppercase tracking-tighter">Get Best <br/> Export Rates</h2>
+                      <div className="flex items-center justify-center lg:justify-start space-x-4 mt-8">
+                         <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center border border-white/20"><Phone size={20} /></div>
+                         <span className="text-xl font-bold">+91-93545 03193</span>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl">
+                      <div className="space-y-4">
+                        <input type="text" placeholder="Company Name" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-5 focus:ring-2 focus:ring-[#00A99D] outline-none font-medium" />
+                        <textarea rows={3} placeholder="Requirement Details (MT)" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-5 focus:ring-2 focus:ring-[#00A99D] outline-none font-medium"></textarea>
+                        <button style={{ backgroundColor: '#111' }} className="w-full text-white font-black uppercase py-5 rounded-2xl flex items-center justify-center hover:scale-[1.02] transition-transform">
+                          Request Quote <Send className="ml-3 w-5 h-5 text-[#00A99D]" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl">
-                <div className="space-y-4">
-                  <input type="text" placeholder="Company Name" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-5 focus:ring-2 focus:ring-[#00A99D] outline-none font-medium" />
-                  <textarea rows={3} placeholder="Raisin Variety & Quantity (MT)" className="w-full bg-gray-50 border-none rounded-2xl px-6 py-5 focus:ring-2 focus:ring-[#00A99D] outline-none font-medium"></textarea>
-                  <button style={{ backgroundColor: '#111' }} className="w-full text-white font-black uppercase py-5 rounded-2xl flex items-center justify-center hover:scale-[1.02] transition-transform">
-                    Request Quote <Send className="ml-3 w-5 h-5 text-[#00A99D]" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
     </div>
   );
